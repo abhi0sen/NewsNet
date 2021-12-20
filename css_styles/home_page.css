@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0;
+}
+.top_bar{
+    display: flex;
+    height: 36px;
+    background-color: orange;
+}
+
+.nav_bar{
+    background-color: aliceblue;  
+    width : 105px
+}
+.nav_bar img{
+    margin-top: 5px;
+    width: 100px;   
+}
+
+.button{
+    padding: 8px 20px;
+    margin: 7px 5px;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-size: 20px;
+    background: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
