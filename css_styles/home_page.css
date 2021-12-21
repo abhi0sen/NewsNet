@@ -5,8 +5,10 @@
     padding: 0;
 }
 .nav_bar{
+    position: sticky;
+    top: 0;
     display: flex;
-    height: 36px;
+    height: 49px;
     background-color: orange;
 }
 
@@ -14,29 +16,29 @@
     /* background-color: aliceblue;   */
     width : 60%;
 }
-.nav_bar img{
-    margin-top: 5px;
-    width: 100px;   
-}
 
-.btn:hover{
-    background-color: rgba(211,211,211, 0.7);
+.nav_bar img{
+    margin-top: 9px;
+    width: 100px; 
+    height: 31px;  
 }
-.button
-{
+.button{
     /* background-color: aliceblue;   */
     width: 40%;
     text-align: right;
 }
 .btn{
     padding: 3px 15px;
-    margin: 3.5px 5px;
+    margin: 8px 5px;
     border: 2px solid white;
     border-radius: 50px;
-    font-size: 15px;
-    background: none;
+    font-size: 17px;
+    background: black;
     color: whitesmoke;
     cursor: pointer;
+}
+.btn:hover{
+    background-color: rgba(100,100,100, 0.6);
 }
 .bg_image{
     overflow: hidden;
@@ -46,6 +48,77 @@
 }
 .bg_image img{
     /* position: absolute; */
-    width: 100%;
-    
+    width: 100%;   
+}
+
+.news_sec{
+    margin-left: 5px;
+    background-color: #FEC27C;
+    width: 1490px;
+    height: 590px;
+}
+
+.note{
+    font-size: 30px;
+    padding-top: 40px ;
+    font-family: 'Times New Roman', Times, serif;
+}
+.paper_button{
+    margin-left: 90px;
+    margin-top: 50px;
+}
+
+.about
+{
+    height: 320px;
+    font-size: 45px;
+    background-color: #EC9C53;
+}
+.description {
+    padding-top: 30px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#c_us_h{
+    margin-top: 60px;
+font-size: 30px;
+}
+#c_us_d{
+    padding-left: 10px;
+}
+#whatsapp{
+    align-items: center;
+    display: flex;
+    margin-top: 30px;
+    width: 200px;
+    height: 30px;
+    background-color: green;
+}
+#whatsapp img{
+    width: 20px;
+}
+.c_us{
+    display: flex;
+}
+.c_us1{
+    margin-left: 150px;
+    width: 50%;
+}
+.c_us2{
+    width: 50%;
+}
+.c_us2 img{
+    width: 400px;
+}
+.contact{
+    height: 430px;
+}
+.footer{
+    background-color: black;
+    color: white;
+}
+.footer img{
+    margin-top: 13px;
+    width: 20px;
 }
