@@ -8,14 +8,15 @@
     <style>
         *{
             padding:0;
-            margin: 0;
+            margin-top: 0;
             
         }
         .back{
-            margin-left: 410px;
+            margin-top: 30px;
+            margin-left: 530px;
             background-color: orange;
-            width: 700px;
-            height: 100vh;
+            width: 500px;
+            height: 550px;
         }
         .back img{
             padding-top: 30px;
@@ -24,10 +25,20 @@
             margin-top: 30px;
             background-color: orangered;
             width: 400px;
-            height: 400px;
+            height: 290px;
         }
         .tab{
-            padding: 30px;
+            padding-top: 30px;
+        }
+        .tab td{
+            padding-bottom: 20px;
+        }
+        #submit{
+            border-radius: 50px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: yellow;
         }
     </style>
 </head>
@@ -38,9 +49,8 @@
     <p>WELCOME</p><br>
     <p>CREATE YOUR ACCOUNT</p>
     <section class="sub_back">
-
     <div>
-    <form action="register.php" method="post">
+    <form action="register.php">
         <table class="tab">
             <tr>
                 <td>Username</td>
@@ -68,6 +78,7 @@
                 <td><input type="text" placeholder="Enter your Password"></td>
             </tr>
         </table>
+        <input type="Submit" value="Create Account" id = "submit">
     </div>
     </form>
 </section>
