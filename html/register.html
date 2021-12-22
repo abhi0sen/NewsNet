@@ -8,8 +8,7 @@
     <style>
         *{
             padding:0;
-            margin-top: 0;
-            
+            margin-top: 0;   
         }
         .back{
             margin-top: 30px;
@@ -45,37 +44,37 @@
 <body>
     <section class= "back">
     <center>
-    <img src="../images/logo.png" alt=""><br><br>
+    <img src="../images/logo.png" alt="logo"><br><br>
     <p>WELCOME</p><br>
     <p>CREATE YOUR ACCOUNT</p>
     <section class="sub_back">
     <div>
-    <form action="register.php">
+    <form action="../php/register.php" method="post">
         <table class="tab">
             <tr>
                 <td>Username</td>
                 <td> : </td>
-                <td><input type="text" placeholder="Enter your username"></td>
+                <td><input type="text" name="username" placeholder="Enter your username"></td>
             </tr>
             <tr>
                 <td>contact no</td>
                 <td> : </td>
-                <td><input type="text" placeholder="Enter your phone no"></td>
+                <td><input type="text" name="contact" placeholder="Enter your phone no"></td>
             </tr>
             <tr>
                 <td>Email</td>
                 <td> : </td>
-                <td><input type="text" placeholder="Enter your mail id"></td>
+                <td><input type="text" name="mail" placeholder="Enter your mail id"></td>
             </tr>
             <tr>
                 <td>Address</td>
                 <td> : </td>
-                <td><input type="text" placeholder="Enter your address"></td>
+                <td><input type="text" name="address" placeholder="Enter your address"></td>
             </tr>
             <tr>
                 <td>Password</td>
                 <td> : </td>
-                <td><input type="text" placeholder="Enter your Password"></td>
+                <td><input type="text" name="pass" placeholder="Enter your Password"></td>
             </tr>
         </table>
         <input type="Submit" value="Create Account" id = "submit">
