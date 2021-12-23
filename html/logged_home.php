@@ -1,8 +1,8 @@
 <?php
-echo "aagya";
+// echo "aagya";
 session_start();
-$name = $_SESSION['name'];
-echo "name is : ".$name;
+$name = $_SESSION['username'];
+// echo "name is : ".$name;
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ echo "name is : ".$name;
             min-width: 30%;
             background-color: red;
             min-height: 10vh;
-            margin-left: 100px;
+            margin-left: 300px;
         }
 
         .option p {
@@ -87,7 +87,7 @@ echo "name is : ".$name;
             <button class="btn">Help</button>
             <img src="../images/user.png" alt="user" id="ui">
             <div class="user">
-                <button class="btn">Username</button>
+                <button class="btn"><?php echo $name; ?></button>
                 <div class="user_menu">
                     <a href="history.html">My History</a><br>
                     <hr>
@@ -168,6 +168,7 @@ echo "name is : ".$name;
             <div class="c_us2">
                 <img src="../images/con_img.png" alt="">
             </div>
+    </section>
 
             <section class="footer">
                 <center>

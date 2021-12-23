@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect('localhost', 'root', '', 'newsnet');
+$con = mysqli_connect('localhost', 'root', '', 'newsnet') or die ("connection failed");
 
 function loginuser($array)
 {
