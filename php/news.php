@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article</title>
+    <title>Send News</title>
 </head>
-
 <body>
-    <section class="bg">
+<section class="bg">
         <div>
             <center>
                 <form action="">
                     <table>
                         <tr>
                             <td>
-                                <label for="title">Title Of Article -</label><br>
+                                <label for="type">Select News Type-</label><br>
+                            </td>
+                      </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="type" name="type" placeholder="Enter Your Title"><br><br>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" id="title" name="title" placeholder="Enter Your Title"><br><br>
+                                <label for="headline">Enter Headline of News -</label><br>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="desc">Description of Article -</label><br>
+                                <input type="text" id="headline" name="headline" placeholder="Description of Article"><br><br>
+                                <!-- <textarea name="desc" id="desc" cols="30" rows="10"></textarea> -->
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" id="desc" name="desc" placeholder="Description of Article"><br><br>
+                                <label for="city">Incident City</label><br>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="auth">Author Name</label><br>
+                                <input type="text" id="city" name="city" placeholder="Name of Author"><br><br>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" id="desc" name="desc" placeholder="Name of Author"><br><br>
+                                <label for="n_desc">News Description</label><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- <input type="text" id="desc" name="desc" placeholder="Name of Author"><br><br> -->
+                                <textarea name="n_desc" id="n_desc" cols="30" rows="10"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -55,5 +65,4 @@
         </div>
     </section>
 </body>
-
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css_styles/home_page.css">
+
+    <style>
+        * {
+            margin: 0;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 0;
+        }
+
+        .logo {
+            position: static;
+            top: 0;
+            width: 100%;
+            /* background-color: rgb(15, 13, 10); */
+            text-align: center;
+            justify-content: center;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .logo img {
+            margin-top: 15px;
+            height: 70%;
+        }
+
+        .background {
+            background: rgba(0, 0, 0, .7) url('../images/sign_back.jpg');
+            background-size: cover;
+            height: 100vh;
+            background-blend-mode: darken;
+        }
+
+        .box-main {
+            margin-top: 80px;
+            margin-left: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: seashell;
+            font-family: 'Times New Roman', Times, serif;
+            width: 50%;
+            /* margin: auto; */
+            height: 60%;
+        }
+
+        .fhalf {
+            margin-top: 30px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .shalf {
+            margin-top: 30px;
+            width: 50%;
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+        }
+        .btn{
+    padding: 8px 20px;
+    margin: 7px 5px;
+    border: 2px solid white;
+    border-radius: 50px;
+    /* font-size: 20px; */
+    background: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+        .text-big{
+    font-size: 41px;
+}
+
+.buttons{
+    margin-top: 50px;
+}
+    </style>
+</head>
+
+<body>
+    <section class="background">
+        <div class="logo">
+            <img src="../images/logo.png" alt="news.net">
+        </div>
+
+        <div class="box-main">
+            <div class="fhalf">
+                <p class="text-big">Log In Yourself as ... </p>
+                <div class="buttons">
+                    <button class="btn">User</button>
+                    <button class="btn">Paper Agency</button>
+                </div>
+            </div>
+            <div class="shalf">
+                <section class= "back">
+                    <center>
+                    <p>WELCOME</p><br>
+                    <p>LOG IN YOUR ACCOUNT</p>
+                    <section class="sub_back">
+                    <div>
+                    <form action="logsession.php" method="get">
+                        <table class="tab">
+                            <tr>
+                                <td>Username</td>
+                                <td> : </td>
+                                <td><input type="text" placeholder="Enter your username" name="username" id ="name" onblur="validation()"></td>
+                                <tr><td colspan="3"><span id="err1" style="font-size: 10px;"></span></td></tr>
+                            </tr>
+                            
+                            <tr>
+                                <td >Password</td>
+                                <td> : </td>
+                                <td><input type="password" placeholder="Enter your Password" name="password" id="password" onkeyup = "validation()"></td>
+                                <tr>
+                                <td colspan="3"><span id="err2" style="font-size: 10px;"></span></td></tr>
+                            </tr>
+                        </table>
+                        <input type="Submit" value="Log In" id = "submit" onclick="validation()">
+                    </form>
+                </div>
+                </section>
+                </center>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

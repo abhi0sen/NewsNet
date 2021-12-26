@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+</head>
+<style>
+    .bg{
+        background-color: orange;
+    }
+</style>
+<body>
+    <section class="bg">
+        <div>
+            <center>
+                <form action="register.php">
+                    <table>
+                        <tr hidden><td><input type="text" name="pap" id="pap" value="article" readonly></td></tr>
+                        <tr>
+                            <td>
+                                <label for="title">Title Of Article -</label><br>
+                            </td>
+                      </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="title" name="title" placeholder="Enter Your Title"><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="desc">Description of Article -</label><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- <input type="text" id="desc" name="desc" placeholder="Description of Article"><br><br> -->
+                                <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="auth">Author Name</label><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="desc" name="desc" placeholder="Name of Author"><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" Value="Send">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+    </section>
+</body>
+</html>
