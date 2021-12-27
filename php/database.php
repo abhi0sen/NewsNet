@@ -21,13 +21,13 @@ function loginadmin($array)
 {
     global $con;
 
-    $pap_name = $array['papername'];
+    $pap_name = $array['paper_name'];
     $pass = $array['pass'];
     // echo $user." : ".$pass;
 
-        $query = "select * from newspaper where username='$pap_name' and password = '$pass'";
+        $query = "select * from newspaper where paper_name='$pap_name' and password = '$pass'";
 
-        $result = mysqli_query($con, $query);
-        $res = mysqli_fetch_array($result);
+        $result1 = mysqli_query($con, $query);
+        $res = mysqli_fetch_array($result1);
         return $res;
 }

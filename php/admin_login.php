@@ -55,9 +55,11 @@
         //     }
         // }
 
-        $('#submit').click(function(){
-        <?php header("Location:admin_login.php"); ?>
-    });
+        $(document).ready(function() {
+            $("#submit").click(function() {
+                <?php header("Location:admin_login.php"); ?>
+            });
+        });
 
     </script>
 </head>

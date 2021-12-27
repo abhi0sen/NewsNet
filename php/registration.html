@@ -74,11 +74,20 @@
         .text-big {
             font-size: 41px;
             font-family: 'Times New Roman', Times, serif;
-            color: white;
+            color: azure;
         }
 
         .buttons {
             margin-top: 50px;
+        }
+        .back{
+            padding-top: 20px;
+            width: 480px;
+            height: 380px;
+        }
+        .sub_back{
+            width: 390px;
+            height: 250px;
         }
     </style>
     <script>
@@ -104,7 +113,7 @@
         </div>
 
         <div class="fhalf">
-            <p class="text-big">Log In Yourself as ... </p>
+            <p class="text-big">Register Yourself as ... </p>
             <div class="buttons">
                 <button class="btn" id="user">User</button>
                 <button class="btn" id="paper">Paper Agency</button>
@@ -113,38 +122,51 @@
         <section class="back" id="login" hidden>
             <center>
                 <p style="margin-top: 20px;">WELCOME</p><br>
-                <p>LOG IN YOUR ACCOUNT</p>
+                <p>REGISTER YOUR ACCOUNT</p>
                 <section class="sub_back">
                     <div>
-                        <form action="logsession.php" method="get">
+                        <form action="register.php" method="post">
                             <table class="tab">
                                 <tr hidden>
                                     <td><input type="text" id="pap" name="pap" value="0" readonly></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="username">Username</label>
-                                    </td>
+                                    <td><label for="username">Username</label></td>
                                     <td> : </td>
-                                    <td><input type="text" placeholder="Enter your username" name="username" id="name"
-                                            onblur="validation()"></td>
-                                <tr>
+                                    <td><input type="text" id="username" name="username" placeholder="Enter your username" onblur="validation()" onkeyup = "validation()"></td>
                                     <td colspan="3"><span id="err1" style="font-size: 10px;"></span></td>
                                 </tr>
+                                <tr>
+                                    <td><label for="contact">Contact No</label></td>
+                                    <td> : </td>
+                                    <td><input type="text" id="contact" name="contact" placeholder="Enter your phone no" onkeyup="validation()"></td>
+                                    <td colspan="3"><span id="err3" style="font-size: 10px;"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="mail">Mail Id</label></td>
+                                    <td> : </td>
+                                    <td><input type="text" id="mail" name="mail" placeholder="Enter your mail id"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="address">Address</label></td>
+                                    <td> : </td>
+                                    <td><input type="text" id="address" name="address" placeholder="Enter your address"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="password">Password</label></td>
                                     <td> : </td>
-                                    <td><input type="password" placeholder="Enter your Password" name="password"
-                                            id="password" onkeyup="validation()"></td>
-                                <tr>
+                                    <td><input type="password" id="password" name="password" placeholder="Enter your Password" onblur="validation()" onkeyup="validation()"></td>
                                     <td colspan="3"><span id="err2" style="font-size: 10px;"></span></td>
+                                </tr>
                                 <tr>
-                                    <td colspan='3'><a href="">forgot password?</a></td>
-                                </tr>
-                                </tr>
+                                    <td><label for="cpassword">Confirm Password</label></td>
+                                    <td> : </td>
+                                    <td><input type="password" id="cpassword" name="cpassword" placeholder="Enter your Password" onkeyup="checkpass()"></td>
+                                    <td colspan="3"><span id="err4" style="font-size: 10px;"></span></td>
                                 </tr>
                             </table>
-                            <input type="Submit" value="Log In" id="submit" onclick="validation()">
+                            <input type="Submit" value="Create Account" id = "submit" onclick="validation()">
+                        </div>
                         </form>
                     </div>
                 </section>
@@ -154,38 +176,51 @@
         <section class="back" id="ad" hidden>
             <center>
                 <p style="margin-top: 30px;">WELCOME</p><br>
-                <p>LOG IN YOUR ACCOUNT</p>
+                <p>REGISTER YOUR PAPER AGENCY</p>
                 <section class="sub_back">
                     <div>
-                        <form action="logsession.php" method="get">
+                        <form action="register.php" method="post">
                             <table class="tab">
                                 <tr hidden>
                                     <td><input type="text" id="pap" name="pap" value="1" readonly></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="paper_name">Papername</label></td>
+                                    <td><label for="paper_name">Paper Name</label></td>
                                     <td> : </td>
-                                    <td><input type="text" placeholder="Enter your Papername" name="paper_name"
-                                            id="paper_name" onblur="validation()"></td>
-                                <tr>
+                                    <td><input type="text" id="paper_name" name="paper_name" placeholder="Enter your Papername" onblur="validation()" onkeyup = "validation()"></td>
                                     <td colspan="3"><span id="err1" style="font-size: 10px;"></span></td>
                                 </tr>
+                                <tr>
+                                    <td><label for="price">Price</label></td>
+                                    <td> : </td>
+                                    <td><input type="text" id="price" name="price" placeholder="Enter your per cmsq area price"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="m_id">Mail Id</label></td>
+                                    <td> : </td>
+                                    <td><input type="text" id="m_id" name="m_id" placeholder="Enter Your Mail Id"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="cont">Contact No</label></td>
+                                    <td> : </td>
+                                    <td><input type="text" id="cont" name="cont" placeholder="Enter your phone no" onkeyup="validation()"></td>
+                                    <td colspan="3"><span id="err3" style="font-size: 10px;"></span></td>
                                 </tr>
                                 <tr>
                                     <td><label for="pass">Password</label></td>
                                     <td> : </td>
-                                    <td><input type="password" placeholder="Enter your Password" name="pass" id="pass"
-                                            onkeyup="validation()"></td>
-                                </tr>
-                                <tr>
+                                    <td><input type="password" id="pass" name="pass" placeholder="Enter your Password" onblur="validation()" onkeyup="validation()"></td>
                                     <td colspan="3"><span id="err2" style="font-size: 10px;"></span></td>
                                 </tr>
                                 <tr>
-                                    <td colspan='3'><a href="">forgot password?</a></td>
+                                    <td><label for="cpass">Confirm Password</label></td>
+                                    <td> : </td>
+                                    <td><input type="password" id="cpass" name="cpass" placeholder="Confirm your Password" onkeyup="checkpass()"></td>
+                                    <td colspan="3"><span id="err4" style="font-size: 10px;"></span></td>
                                 </tr>
-
                             </table>
-                            <input type="Submit" value="Log In" id="submit" onclick="validation()">
+                            <input type="Submit" value="Create Account" id = "submit" onclick="validation()">
+                        </div>
                         </form>
                     </div>
                 </section>

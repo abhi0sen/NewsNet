@@ -19,12 +19,13 @@ $name = $_SESSION['username'];
         
         .contact {
             padding: 36px 0;
-            height: 400px;
+            /* height: 400px; */
             z-index: 0;
             /* display: flex; */
         }
 
         .option {
+            margin-left: 6.5%;
             padding-top: 30px;
             text-align: center;
             display: flex;
@@ -36,7 +37,7 @@ $name = $_SESSION['username'];
         .option div {
             /* position: static; */
             min-width: 30%;
-            background-color: red;
+            background-color: #F9D30F;
             min-height: 10vh;
             margin-left: 150px;
         }
@@ -93,7 +94,7 @@ $name = $_SESSION['username'];
             margin: 0 50px;
         }
         .images div{
-            background-color: rgb(236, 167, 135);
+            background-color: #C4C4C4;
             width: 150px;
             height: 180px;
             /* overflow: hidden; */
@@ -109,21 +110,21 @@ $name = $_SESSION['username'];
         .pub, .news{
             margin: 4px 4px;
             /* margin-right: 5px;  */
-            background-color: rgb(214, 226, 107);
-            width: 80%;
+            background-color: #F9710F;
+            width: 88%;
             justify-content: center;
             align-content:center;
             text-align: center;
         }
         .news{
-            background-color: rgb(218, 179, 108);
+            background-color: #FAE105;
         }
         
         .news_ad{
             justify-content: center;
             text-align: center;
             align-content: center;
-            background-color: rgb(56, 152, 241);
+            background-color: #C4D7F2;
             height: 600px;
         }
 
@@ -139,6 +140,9 @@ $name = $_SESSION['username'];
         }
         #whatsapp a{
             text-decoration: none;
+        }
+        #ad{
+            cursor: pointer;
         }
 
     </style>
@@ -308,7 +312,7 @@ $name = $_SESSION['username'];
     </section>
 
     <hr>
-    <section class="news_sec contact">
+    <section class="news_sec contact" id="contact">
         <div style="font-size: 30px;">
             <div>
                 <center>

@@ -64,10 +64,10 @@
     <p>LOG IN YOUR ACCOUNT</p>
     <section class="sub_back">
     <div>
-    <form action="logsession.php" method="post">
+    <form action="logsession.php" method="get">
         <table class="tab">
-            <tr>
-                <tr></tr>
+            <tr hidden><td><input type="text" id="pap" name="pap" value="0" readonly></td></tr>
+                <tr>
                 <td>Username</td>
                 <td> : </td>
                 <td><input type="text" placeholder="Enter your username" name="username" id ="name" onblur="validation()"></td>
