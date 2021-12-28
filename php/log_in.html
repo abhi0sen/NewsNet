@@ -43,17 +43,18 @@
             {
                 err2.innerHTML = "";
             }
-            // if (nm=="" || pas=="") {
-            //     alert("enter your details");
-            //     window.location="log_in.html";
-            // }
-        }
-        function blank() {
+
             if (nm=="" || pas=="") {
                 alert("enter your details");
-                window.location="log_in.html";
+                window.location.replace = "log_in.html";
             }
         }
+        // function blank() {
+        //     if (nm=="" || pas=="") {
+        //         alert("enter your details");
+        //         window.location="log_in.html";
+        //     }
+        
     </script>
 </head>
 <body onload="init()">
@@ -70,18 +71,18 @@
                 <tr>
                 <td>Username</td>
                 <td> : </td>
-                <td><input type="text" placeholder="Enter your username" name="username" id ="name" onblur="validation()"></td>
+                <td><input type="text" placeholder="Enter your username" name="username" id ="name" onblur="validation()" required></td>
                 <tr><td colspan="3"><span id="err1" style="font-size: 10px;"></span></td></tr>
             </tr>
             <tr>
                 <td >Password</td>
                 <td> : </td>
-                <td><input type="password" placeholder="Enter your Password" name="password" id="password" onkeyup = "validation()"></td>
+                <td><input type="password" placeholder="Enter your Password" name="password" id="password" onkeyup = "validation()" required></td>
                 <tr>
                 <td colspan="3"><span id="err2" style="font-size: 10px;"></span></td></tr>
             </tr>
         </table>
-        <input type="Submit" value="Log In" id = "submit" onclick="validation()">
+        <input type="Submit" value="Log In" id = "submit" onclick="validat()">
     </form>
 </div>
 </section>

@@ -10,8 +10,10 @@
 <section class="bg">
         <div>
             <center>
-                <form action="">
+                <form action="register.php" method="post">
                     <table>
+                    <input type="text" id="pap" name="pap" value = "news" readonly hidden>
+
                         <tr>
                             <td>
                                 <label for="type">Select News Type-</label><br>
@@ -19,7 +21,7 @@
                       </tr>
                         <tr>
                             <td>
-                                <input type="text" id="type" name="type" placeholder="Enter Your Title"><br><br>
+                                <input type="text" id="type" name="type" placeholder="Enter Your Title" required><br><br>
                             </td>
                         </tr>
                         <tr>
@@ -51,11 +53,12 @@
                         <tr>
                             <td>
                                 <!-- <input type="text" id="desc" name="desc" placeholder="Name of Author"><br><br> -->
-                                <textarea name="n_desc" id="n_desc" cols="30" rows="10"></textarea>
+                                <textarea name="n_desc" id="n_desc" cols="30" rows="10" required></textarea>
                             </td>
                         </tr>
+                        <br><br>
                         <tr>
-                            <td>
+                            <td align="center">
                                 <input type="submit" Value="Request Approval">
                             </td>
                         </tr>

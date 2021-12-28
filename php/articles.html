@@ -12,11 +12,12 @@
         background-color: orange;
     }
 </style>
-<body>
+<body> 
     <section class="bg">
         <div>
             <center>
-                <form action="register.php">
+                <form action="register.php" method="post">
+                    
                     <table>
                         <tr hidden><td><input type="text" name="pap" id="pap" value="article" readonly></td></tr>
                         <tr>
@@ -26,7 +27,7 @@
                       </tr>
                         <tr>
                             <td>
-                                <input type="text" id="title" name="title" placeholder="Enter Your Title"><br><br>
+                                <input type="text" id="title" name="title" placeholder="Enter Your Title" required><br><br>
                             </td>
                         </tr>
                         <tr>
@@ -37,7 +38,7 @@
                         <tr>
                             <td>
                                 <!-- <input type="text" id="desc" name="desc" placeholder="Description of Article"><br><br> -->
-                                <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+                                <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Type Your Article Content" required></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -47,7 +48,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" id="desc" name="desc" placeholder="Name of Author"><br><br>
+                                <input type="text" id="auth" name="auth" placeholder="Name of Author" required><br><br>
                             </td>
                         </tr>
                         <tr>

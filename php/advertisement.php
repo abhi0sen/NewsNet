@@ -7,19 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-<section class="bg">
+<section class="bg"> 
         <div>
             <center>
-                <form action="">
+                <form action="register.php" method="post">
                     <table>
+
+                        <tr>
+                            <input type="text" id="pap" name="pap" value = "adver" readonly hidden>
+                        </tr>
+
                         <tr>
                             <td>
-                                <label for="ad_type">Select Your Ad Type-</label><br>
+                                <label for= "ad_type">Select Your Ad Type-</label><br>
                             </td>
                       </tr>
                         <tr>
                             <td>
-                                <input type="text" id="ad_type" name="ad_type" placeholder="Enter Your Title"><br><br>
+                                <input type="text" id="ad_type" name="ad_type" placeholder="Enter Your Title" required><br><br>
                             </td>
                         </tr>
                         <tr>

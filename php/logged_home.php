@@ -16,7 +16,6 @@ $name = $_SESSION['username'];
     <link rel="stylesheet" href="../css_styles/home_page.css">
     <script src="../js/jquery-3.6.0.min.js"></script>
     <style>
-        
         .contact {
             padding: 36px 0;
             /* height: 400px; */
