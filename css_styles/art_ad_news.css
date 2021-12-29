@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.bg{
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7) url('../images/article.jpg');
+    /* background-size: cover; */
+    background-blend-mode: darken;
+    width: 1444px;
+    /* align-items: center; */
+    /* text-align: center; */
+    /* justify-content: center; */
+    padding: 33px;
+    /* margin-block: 62px; */
+}
+.bg p{
+    text-decoration: underline rgb(224, 252, 187);
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+.form{
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 22px auto;
+    padding: 30px;
+}
+.form input, label, textarea{
+    margin: 10px;
+    padding: 5px 5px;
+    width: 100%;
+font-size: 19px;    
+/* border: 2px solid grey; */
+border-radius: 5px;
+}
+table, td{
+    color: white;
+}

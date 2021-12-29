@@ -1,0 +1,137 @@
+.contact {
+    padding: 36px 0;
+    /* height: 400px; */
+    z-index: 0;
+    /* display: flex; */
+}
+
+.option {
+    margin-left: 6.5%;
+    padding-top: 30px;
+    text-align: center;
+    display: flex;
+    z-index: 1;
+    overflow: hidden;
+    align-items: center;
+}
+
+.option div {
+    /* position: static; */
+    min-width: 30%;
+    background-color: #F9D30F;
+    min-height: 10vh;
+    margin-left: 150px;
+}
+
+.option p {
+    margin: 20%;
+    font-size: 30px;
+}
+
+#ui {
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+}
+
+.user {
+    position: relative;
+    display: inline-block;
+}
+
+.user_menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    z-index: 2;
+    text-align: left;
+}
+
+.user:hover .user_menu {
+    display: block;
+}
+
+.user_menu a {
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+/* .article{
+    display: none;
+} */
+#art {
+    cursor: pointer;
+}
+
+#note {
+    padding-top: 40px;
+    font-size: 30px;
+}
+
+.images {
+    margin: 0 50px;
+}
+
+.images div {
+    background-color: #C4C4C4;
+    /* width: 150px;
+    height: 180px; */
+    /* overflow: hidden; */
+}
+
+.images div img {
+    /* margin: 4px 4px; */
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    width: 95%;
+    height: 70px;
+}
+
+.pub,
+.news {
+    margin: 4px 4px;
+    /* margin-right: 5px;  */
+    background-color: #F9710F;
+    width: 88%;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.news {
+    background-color: #FAE105;
+}
+
+.news_ad {
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    background-color: #C4D7F2;
+    height: 600px;
+}
+
+.img_gal {
+    margin: 50px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+#id {
+    cursor: pointer;
+}
+
+/* #whatsapp a {
+    text-decoration: none;
+} */
+
+#ad {
+    cursor: pointer;
+}

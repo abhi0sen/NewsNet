@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Newspaper Network</title>
+    <link rel="stylesheet" href="../css_styles/art_ad_news.css">
+
 </head>
 <body>
-<section class="bg"> 
-        <div>
+    <?php
+        include ('nav_bar.php')
+    ?>
+<section class="bg firstsection"> 
+<div>
+            <b><p>Advertise Your Brand</p></b>
+        </div>
+        <div  class="form">
             <center>
                 <form action="register.php" method="post" enctype="multipart/form-data">
                     <table>
@@ -69,5 +77,8 @@
             </center>
         </div>
     </section>
+    <?php
+include ('footer.php');
+?>
 </body>
 </html>
