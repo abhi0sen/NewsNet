@@ -10,7 +10,7 @@
 <section class="bg"> 
         <div>
             <center>
-                <form action="register.php" method="post">
+                <form action="register.php" method="post" enctype="multipart/form-data">
                     <table>
 
                         <tr>

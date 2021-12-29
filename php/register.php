@@ -15,6 +15,23 @@ else if($typ == '1'){
     $mail = $_POST['m_id'];
     $cont = $_POST['cont'];
     $pass = $_POST['pass'];
+    $filepath = $_FILES['filep'];
+
+    $tempath = $_FILES['filep']['tmp_name'];
+echo $tempath;
+echo "<br>";
+$fname = $_FILES['filep']['name'];
+echo $fname;
+$a = explode(".", $fname);
+$text = $a[count($a)-1];
+echo "<br>".$text;
+$newname = time().".".$text;
+echo "<br>".$newname;
+
+$uploadpath = "img/$newname";
+echo "<br>".$uploadpath;
+
+$res = move_uploaded_file($tempath, $uploadpath);
     }
 
 else if($typ == 'article'){
@@ -29,7 +46,7 @@ else if($typ == 'adver'){
     // $post_id = $_SESSION['post_id'];
     $ad_type = $_POST['ad_type'];
     $line = $_POST['line'];
-    $upload = $_POST['upload'];
+    $upload = $_FILES['upload'];
 }
 else if($typ == 'news'){
     session_start();
@@ -38,6 +55,13 @@ else if($typ == 'news'){
     $headline = $_POST['headline'];
     $city = $_POST['city'];
     $n_desc = $_POST['n_desc'];
+}
+else if($typ == '1.1'){
+    session_start();
+    $paper_name = $_POST['paper_name'];
+    $price = $_POST['price'];
+    $mail = $_POST['m_id'];
+    $cont = $_POST['cont'];
 }
 
 $con = mysqli_connect('localhost', 'root', '', 'newsnet') or die("Connection Failed");
@@ -48,7 +72,7 @@ if ($con && $typ == '0') {
 }
 else if($con && $typ == '1')
 {
-    $pap_query = "insert into newspaper (paper_name, price, contact_no, mail_id, password) value('$papername', '$price', '$cont', '$mail', '$pass')";
+    $pap_query = "insert into newspaper (paper_name, price, contact_no, mail_id, password, filepath) value('$papername', '$price', '$cont', '$mail', '$pass', '$uploadpath')";
     $pap_res = mysqli_query($con, $pap_query);   
     header('location:sign_in.html');
 }
@@ -109,7 +133,6 @@ else if ($con && $typ == 'news')
 
     apply($user_id, $p_id);
 
-
     $result=insertNews($p_id, $type, $headline, $n_desc, $city);
     if($result)
     {
@@ -119,6 +142,12 @@ else if ($con && $typ == 'news')
     {
         echo "<h1> News Insert FailedM</h1>";
     }
+}
 
+else if($con && $typ == '1.1'){
+    $query = "update newspaper set price = $price, mail_id = '$mail', contact_no = '$cont' where paper_name = '$paper_name'";
+    $res = mysqli_query($con, $query);
+    echo $res;
+    // header('location:admin_home.php');
 }
 ?>

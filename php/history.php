@@ -1,9 +1,15 @@
 <?php
 // echo "aagya";
+include ('database.php');
 session_start();
 $name = $_SESSION['username'];
+$user_id = $_SESSION['user_id'];
 // echo "name is : ".$name;
+$res = history($user_id);
+
 ?>
+<!-- select a.post_id, a.apply_date, n.paper_name, p.type, n.price from apply_for a, post p, newspaper n WHERE a.post_id = p.post_id AND p.paper_name = n.paper_name; -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,37 +118,33 @@ $name = $_SESSION['username'];
             <div>
                 <table align="center">
                     <tr>
-                        <th>S.No.</th>
                         <th>Post Id</th>
                         <th>Apply Date</th>
                         <th>Paper Name</th>
                         <th>Post Category</th>
                         <th>Amount</th>
-                        <th>Status</th>
                     </tr>
                     <tr>
-                        <td>1.</td>
-                        <td>12333</td>
-                        <td>12th jan 2020</td>
-                        <td>Times Of India</td>
-                        <td>Article</td>
-                        <td>0</td>
-                        <td>Sent</td>
-                    </tr>
-                    <tr>
-                        <td>2.</td>
-                        <td>32334</td>
-                        <td>343534</td>
-                        <td>The Hindu</td>
-                        <td>Advertisement</td>
-                        <td>500Rs</td>
-                        <td>Approved</td>
-                    </tr>
+                <?php
+
+                    while($arr = mysqli_fetch_array($res))
+                    {
+                ?>
+                <tr>
+                    <td><?php echo $arr['post_id']?></td>
+                    <td><?php echo $arr['apply_date']?></td>
+                    <td><?php echo $arr['paper_name'];?></td>
+                    <td><?php echo $arr['type'];?></td>
+                    <td><?php echo $arr['price'];?></td>
+                </tr>
+                <?php
+                    }
+                    ?>
+            </tr>
                 </table>    
             </div>
             </center>
         </section>
-
         <section class="footer">
             <center>
                 <b>

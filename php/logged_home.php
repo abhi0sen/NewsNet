@@ -3,6 +3,10 @@
 session_start();
 $name = $_SESSION['username'];
 // echo "name is : ".$name;
+$con = mysqli_connect('localhost', 'root', '', 'newsnet') or die("connection failed");
+$query = "select * from newspaper";
+$res = mysqli_query($con, $query);
+$res1 = mysqli_query($con, $query);
 ?>
 
 <!DOCTYPE html>
@@ -85,20 +89,24 @@ $name = $_SESSION['username'];
         #art {
             cursor: pointer;
         }
-        #note{
+
+        #note {
             padding-top: 40px;
             font-size: 30px;
         }
-        .images{
+
+        .images {
             margin: 0 50px;
         }
-        .images div{
+
+        .images div {
             background-color: #C4C4C4;
-            width: 150px;
-            height: 180px;
+            /* width: 150px;
+            height: 180px; */
             /* overflow: hidden; */
         }
-        .images div img{
+
+        .images div img {
             /* margin: 4px 4px; */
             margin-left: 4px;
             margin-right: 4px;
@@ -106,20 +114,23 @@ $name = $_SESSION['username'];
             width: 95%;
             height: 70px;
         }
-        .pub, .news{
+
+        .pub,
+        .news {
             margin: 4px 4px;
             /* margin-right: 5px;  */
             background-color: #F9710F;
             width: 88%;
             justify-content: center;
-            align-content:center;
+            align-content: center;
             text-align: center;
         }
-        .news{
+
+        .news {
             background-color: #FAE105;
         }
-        
-        .news_ad{
+
+        .news_ad {
             justify-content: center;
             text-align: center;
             align-content: center;
@@ -127,23 +138,25 @@ $name = $_SESSION['username'];
             height: 600px;
         }
 
-        .img_gal{
+        .img_gal {
             margin: 50px;
             text-align: center;
             align-content: center;
             justify-content: center;
             display: flex;
         }
-        #id{
-            cursor: pointer;
-        }
-        #whatsapp a{
-            text-decoration: none;
-        }
-        #ad{
+
+        #id {
             cursor: pointer;
         }
 
+        #whatsapp a {
+            text-decoration: none;
+        }
+
+        #ad {
+            cursor: pointer;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -200,7 +213,7 @@ $name = $_SESSION['username'];
                     <p>Article</p>
                 </b>
             </div>
-            <div id = "ad">
+            <div id="ad">
                 <b>
                     <p>Advertisement/News</p>
                 </b>
@@ -215,7 +228,21 @@ $name = $_SESSION['username'];
             </center>
         </div>
         <div>
-            <center>
+            <table>
+                <tr>
+                    <?php
+
+                    while ($arr = mysqli_fetch_array($res)) {
+                    ?>
+                <tr>
+                    <td><a href="articles.html"><button><img src="<?php echo $arr['filepath']; ?>" alt="jskdf"></button></a></td>
+                </tr>
+            <?php
+                    }
+            ?>
+            </tr>
+            </table>
+            <!-- <center>
                 <a href="articles.html"><button class="paper_button"><img src="../images/toi.png" alt="Times Of India"></button></a>
                 <a href="articles.html"><button class="paper_button"><img src="../images/fpj.png" alt="Free Press"></button></a>
                 <a href="articles.html"><button class="paper_button"><img src="../images/hindu.png" alt="Times Of India"></button><br></a>
@@ -223,142 +250,69 @@ $name = $_SESSION['username'];
                 <a href="articles.html"><button class="paper_button"><img src="../images/db.png" alt="Times Of India"></button></a>
                 <a href="articles.html"><button class="paper_button"><img src="../images/patrika.png" alt="Free Press"></button></a>
                 <a href="articles.html"><button class="paper_button"><img src="../images/ND.png" alt="Times Of India"></button><br></a>
-            </center>
+            </center> -->
         </div>
     </section>
-    
-    <section class="news_ad" id="news_a" hidden>
-        <div id="note"><center>
-            <b> Get Your Advertisement or News Approval from Popular Newspaper</b>
-        </center></div>
-        <div class="img_gal">
-        <div class="images">
-            <div>
-            <img src="../images/toi.png" alt="times">
-            <center>
-            <span>
-                <p>30Rs</p>
-                <a href="advertisement.php"><button class="pub">Publish Ad</button></a>
-                <a href="news.php"><button class="news">Post News</button></a>
-            </span>
-        </center>
-        </div>
-        </div>
-        <div class="images">
-            <div>
-            <img src="../images/fpj.png" alt="Free Press">
-            <center>
-            <span>
-                <p>30Rs</p>
-                <a href="advertisement.php"><button class="pub">Publish Ad</button></a>
-                <a href="news.php"><button class="news">Post News</button></a>
-            </span>
-        </center>
-        </div>
-        </div>
-        <div class="images">
-            <div>
-            <img src="../images/hindu.png" alt="Hindu">
-            <center>
-            <span>
-                <p>30Rs</p>
-                <a href="advertisement.php"><button class="pub">Publish Ad</button></a>
-                <a href="news.php"><button class="news">Post News</button></a>
-            </span>
-        </center>
-        </div>
-    </div>
-        </div>
-        <div class="img_gal">
-        <div class="images">
-            <div>
-            <img src="../images/db.png" alt="Dainik Bhaskar">
-            <center>
-            <span>
-                <p>30Rs</p>
-                <a href="advertisement.php"><button class="pub">Publish Ad</button></a>
-                <a href="news.php"><button class="news">Post News</button></a>
-            </span>
-        </center>
-        </div>
-        </div>
 
-        <div class="images">
-            <div>
-            <img src="../images/patrika.png" alt="Patrika">
+    <section class="news_ad" id="news_a" hidden>
+        <div id="note">
             <center>
-            <span>
-                <p>30Rs</p>
-                <a href="advertisement.php"><button class="pub">Publish Ad</button></a>
-                <a href="news.php"><button class="news">Post News</button></a>
-            </span>
-        </center>
+                <b> Get Your Advertisement or News Approval from Popular Newspaper</b>
+            </center>
         </div>
-        </div>
-        <div class="images">
-            <div>
-            <img src="../images/ND.png" alt="Nai Duniya">
-            <center>
-            <span>
-                <p>30Rs</p>
-                <a href="advertisement.php"><button class="pub">Publish Ad</button></a>
-                <a href="news.php"><button class="news">Post News</button></a>
-            </span>
-        </center>
-        </div>
-    </div>
+        <div class="img_gal">
+            <div class="images">
+                <div>
+                    <!-- <img src="../images/fpj.png" alt="Free Press"> -->
+                    <table cellspacing = "10px">
+                        <tr>
+                            <th align="center">Paper Image</th>
+                            <th align="center">Price/cm sq</th>
+                            <th colspan="2" align="center">Options</th>
+                        </tr>
+                        <?php
+                        while ($arr = mysqli_fetch_array($res1)) {
+                        ?>
+                            <tr>
+                                <td><img src="<?php echo $arr['filepath']; ?>" alt="jskdf"></td>
+                                <center>
+                                    <td>
+
+                                        <p><?php echo $arr['price'] ?></p>
+                                        
+                                    <td><a href="advertisement.php"><button class="pub">Publish Ad</button></a></td>
+                                    <td><a href="news.php"><button class="news">Post News</button></a></td>
+                                    </td>
+                                </center>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
     <hr>
-    <section class="news_sec contact" id="contact">
-        <div style="font-size: 30px;">
-            <div>
-                <center>
-                    <h1>Contact Us</h1>
-                </center>
-            </div>
-        <div class="c_us">
-            <div class="c_us1">
-                <div>
-                    <p id="c_us_h"><b>What are you thinking about?</b></p>
-                    <br>
-                    <p id="c_us_d">
-                        Have a story idea for us? <br>
-                        Would you like to write for us?
-                        <br>
-                        Send us a message and let us know what you are thinking about.
-                    </p>
-                </div>
-                <div>
-                    <button id="whatsapp">
-                        <a href="https://web.whatsapp.com/"><img src="../images/whatsapp.png" alt="">Message us on Whatsapp</a>
-                    </button>
-                </div>
-            </div>
-    
-            
-            <div class="c_us2">
-                <img src="../images/con_img.png" alt="">
-            </div>
-            </div>
-            </div>
-        </section>
-    
-        <section class="footer">
-            <center>
-                <b>
-                    <p style="font-size: 20px;">Follow us</h3>
-                </b><br>
-                <a href="www.facebook.com"><img src="../images/facebook.png" alt="facebook"></a>
-                <a href="www.instagram.com"><img src="../images/instagram.png" alt="instagram"></a>
-                <a href="www.twitter.com"><img src="../images/twitter.png" alt="twitter"></a>
-                <br>
-                <em>
-                    <p style="font-size: 10px;">COPYRIGHT © 2021 NEWS.NET - ALL RIGHTS RESERVED</p>
-                </em>
-            </center>
-        </section>
+
+    <section class="footer">
+        <center>
+            <b>
+                <p style="font-size: 20px;">Follow us</h3>
+            </b><br>
+            <a href="www.facebook.com"><img src="../images/facebook.png" alt="facebook"></a>
+            <a href="www.instagram.com"><img src="../images/instagram.png" alt="instagram"></a>
+            <a href="www.twitter.com"><img src="../images/twitter.png" alt="twitter"></a>
+            <br>
+            <em>
+                <p style="font-size: 10px;">COPYRIGHT © 2021 NEWS.NET - ALL RIGHTS RESERVED</p>
+            </em>
+        </center>
+    </section>
 </body>
 
 </html>

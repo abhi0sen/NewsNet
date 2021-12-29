@@ -328,6 +328,7 @@
                                     <td><input type="password" id="cpassword" name="cpassword" placeholder="Enter your Password" onkeyup="checkpass()" required></td>
                                     <td colspan="3"><span id="err4" style="font-size: 10px;"></span></td>
                                 </tr>
+                                
                             </table>
                             <input type="Submit" value="Create Account" id = "submit" onclick="validation()">
                         </div>
@@ -343,7 +344,7 @@
                 <p>REGISTER YOUR PAPER AGENCY</p>
                 <section class="sub_back">
                     <div>
-                        <form action="register.php" method="post">
+                        <form action="register.php" method="post" enctype="multipart/form-data">
                             <table class="tab">
                                 <tr hidden>
                                     <td><input type="text" id="pap" name="pap" value="1" readonly></td>
@@ -355,7 +356,7 @@
                                     <td colspan="3"><span id="err5" style="font-size: 10px;"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="price">Price</label></td>
+                                    <td><label for="price">Quotation Price</label></td>
                                     <td> : </td>
                                     <td><input type="text" id="price" name="price" placeholder="Enter your per cmsq area price" required></td>
                                 </tr>
@@ -381,6 +382,12 @@
                                     <td> : </td>
                                     <td><input type="password" id="cpass" name="cpass" placeholder="Confirm your Password" onkeyup="pap_checkpass()" required></td>
                                     <td colspan="3"><span id="err8" style="font-size: 10px;"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="filep">Agency Logo</label></td>
+                                    <td> : </td>
+                                    <td><input type="file" id="filep" name="filep" required></td>
+                                    <td colspan="3"><span id="err4" style="font-size: 10px;"></span></td>
                                 </tr>
                             </table>
                             <input type="Submit" value="Create Account" id = "submit" onclick="pap_validation()">

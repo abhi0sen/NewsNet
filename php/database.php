@@ -82,3 +82,36 @@ function insertArticle($p_id, $title, $desc, $auth)
     $count = mysqli_affected_rows($con);
     return $count;
 }
+
+function getArticle(){
+    global $con;
+    $article = "select * from article";
+    $res = mysqli_query($con, $article);
+    $result = mysqli_fetch_array($res);
+    return $result;
+}
+
+function updateAgencyRecord($name)
+{
+    global $con;
+
+    // $pap_name = $array['paper_name'];
+    // $pass = $array['pass'];
+    // echo $user." : ".$pass;
+
+        $query = "select * from newspaper where paper_name='$name'";
+
+        $result1 = mysqli_query($con, $query);
+        $res = mysqli_fetch_array($result1);
+        return $res;
+}
+
+function history($user_id){
+    global $con;
+
+    $query = "select a.post_id, a.apply_date, n.paper_name, p.type, n.price from apply_for a, post p, newspaper n WHERE a.post_id = p.post_id AND p.paper_name = n.paper_name and a.user_id = $user_id";
+    $result1 = mysqli_query($con, $query);
+    // $res = mysqli_fetch_array($result1);
+    return $result1;
+}
+
