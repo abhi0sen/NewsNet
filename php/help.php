@@ -7,6 +7,12 @@
     <title>Help & documentation</title>
 </head>
 <body>
+    <?php
+    include('nav_bar.php');
+    ?>
     <h1>Ask Your Questions.....</h1>
+    <?php
+    include('footer.php');
+    ?>
 </body>
 </html>

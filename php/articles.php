@@ -1,3 +1,8 @@
+<?php
+$paper = $_GET['paper'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +22,13 @@
         <div>
             <b><p>Send Your Article</p></b>
         </div>
+
         <div class="form">
             <center>
                 <form action="register.php" method="post">
                     
                     <table>
+                        <tr><td><input type="text" name="paper" id="paper" value="<?php echo $paper ?>" readonly></td></tr>
                         <tr hidden><td><input type="text" name="pap" id="pap" value="article" readonly></td></tr>
                         <tr>
                             <td>

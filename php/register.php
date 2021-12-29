@@ -18,20 +18,20 @@ else if($typ == '1'){
     $filepath = $_FILES['filep'];
 
     $tempath = $_FILES['filep']['tmp_name'];
-echo $tempath;
-echo "<br>";
-$fname = $_FILES['filep']['name'];
-echo $fname;
-$a = explode(".", $fname);
-$text = $a[count($a)-1];
-echo "<br>".$text;
-$newname = time().".".$text;
-echo "<br>".$newname;
+    echo $tempath;
+    echo "<br>";
+    $fname = $_FILES['filep']['name'];
+    echo $fname;
+    $a = explode(".", $fname);
+    $text = $a[count($a) - 1];
+    echo "<br>" . $text;
+    $newname = time() . "." . $text;
+    echo "<br>" . $newname;
 
-$uploadpath = "img/$newname";
-echo "<br>".$uploadpath;
+    $uploadpath = "img/$newname";
+    echo "<br>" . $uploadpath;
 
-$res = move_uploaded_file($tempath, $uploadpath);
+    $res = move_uploaded_file($tempath, $uploadpath);
     }
 
 else if($typ == 'article'){
@@ -44,9 +44,27 @@ else if($typ == 'article'){
 else if($typ == 'adver'){
     session_start();
     // $post_id = $_SESSION['post_id'];
+    $paper = $_POST['paper'];
     $ad_type = $_POST['ad_type'];
     $line = $_POST['line'];
     $upload = $_FILES['upload'];
+
+    $tempath = $_FILES['upload']['tmp_name'];
+// echo $tempath;
+// echo "<br>";
+$fname = $_FILES['upload']['name'];
+// echo $fname;
+$a = explode(".", $fname);
+$text = $a[count($a)-1];
+// echo "<br>".$text;
+$newname = time().".".$text;
+// echo "<br>".$newname;
+
+$uploadpath = "img/$newname";
+// echo "<br>".$uploadpath;
+
+$res = move_uploaded_file($tempath, $uploadpath);
+
 }
 else if($typ == 'news'){
     session_start();
@@ -103,12 +121,12 @@ else if ($con && $typ == 'adver')
 {
     // session_start();
     $user_id = $_SESSION['user_id'];
-    $post_query = "insert into post (user_id, type) value ($user_id, 'Advertisement')";
+    $post_query = "insert into post (user_id, type, paper_name) value ($user_id, 'Advertisement', '$paper')";
     mysqli_query($con, $post_query);  
     $data = post($_GET);
     $p_id = $data['post_id'];
     apply($user_id, $p_id);
-    $result = insertAd($p_id, $ad_type, $line, $upload);
+    $result = insertAd($p_id, $ad_type, $line, $uploadpath);
     if($result)
     {
         header('location:logged_home.php');

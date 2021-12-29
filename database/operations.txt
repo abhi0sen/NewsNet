@@ -10,6 +10,11 @@ CREATE table news (post_id int, headline varchar(200) not null, news_desc varcha
 foreign Key -- 
 ALTER TABLE `post` ADD CONSTRAINT `foreign key` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
+delimiter **
+create procedure getdata (in p_typ varchar(30), in pap_name varchar(50))
+                         BEGIN 
+                         SELECT p.paper_name, p.user_id, p.post_id, p.type FROM post p, newspaper n where p.paper_name = n.paper_name and p.type = p_typ and p.paper_name = pap_name;
+                          end**
+                          delimiter ;
 
 create view history as (select a.post_id, a.apply_date, n.paper_name, p.type, n.price from apply_for a, post p, newspaper n WHERE a.post_id = p.post_id AND p.paper_name = n.paper_name;)

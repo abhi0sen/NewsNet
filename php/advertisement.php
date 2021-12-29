@@ -1,3 +1,7 @@
+<?php
+$paper = $_GET['paper'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +18,16 @@
     ?>
 <section class="bg firstsection"> 
 <div>
-            <b><p>Advertise Your Brand</p></b>
+            <b><p>Advertise Your Brand in <br><?php echo $paper ?></p></b>
         </div>
-        <div  class="form">
+        <div class="form">
             <center>
                 <form action="register.php" method="post" enctype="multipart/form-data">
                     <table>
 
+                        <tr>
+                            <input type="text" id="paper" name="paper" value = "<?php echo $paper ?>" readonly hidden>
+                        </tr>
                         <tr>
                             <input type="text" id="pap" name="pap" value = "adver" readonly hidden>
                         </tr>

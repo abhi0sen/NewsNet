@@ -1,8 +1,6 @@
 <?php
-// echo "aagya <br>";
 session_start();
 $name = $_SESSION['paper_name'];
-// echo "name is : ".$name;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +20,8 @@ $name = $_SESSION['paper_name'];
         <ul class="nav-list">
             <div class="logo"><img src="../images/logo.png" alt="Logo"></div>
             <li><a href="#home"> Home </a></li>
-            <li><a href="#home"> Request </a></li>
-            <li><a href="setting.php"> Settings </a></li>
+            <li><a href="request_admin.php"> Request </a></li>
+            <li><a href="setting.php"> Profile </a></li>
             <!-- <li><a href="#service"> Services </a></li> -->
             <!-- <li><a href="#contact"> contact us </a></li> -->
         </ul>
@@ -33,10 +31,9 @@ $name = $_SESSION['paper_name'];
         </div>  
     </nav>
     <section class="background firstsection">
-        <div class="box-main">
+        <!-- <div class="box-main">
             <div class="fhalf">
-                <p class="text-big">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti
-                    consequuntur nam labore accusantium architecto ipsa vero aliquid veniam delectus.</p>
+                <p class="text-big">Lorem ipsum dam delectus.</p>
                 <p class="text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti
                     consequuntur nam labore accusantium architecto ipsa vero aliquid veniam delectus.</p>
                 <div class="buttons">
@@ -47,7 +44,7 @@ $name = $_SESSION['paper_name'];
             <div class="shalf">
                 <img src="../img/bg.jpg" alt="background">
             </div>
-        </div>
+        </div> -->
     </section>
     <section class="section">
         <div class="paras">

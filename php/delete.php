@@ -7,5 +7,4 @@ $query = "delete from user where username = '$name'";
 $res = mysqli_query($con, $query);
 // echo $res;
     header('location:log_in.html');
-
 ?>

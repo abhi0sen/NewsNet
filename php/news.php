@@ -1,3 +1,7 @@
+<?php
+$paper = $_GET['paper'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +16,17 @@
 include ('nav_bar.php');
 ?>
 <section class="bg">
+<div>
+    <b><p>Publish Your News in <br><?php echo $paper ?></p></b>
+</div>
         <div class = "form">
             <center>
                 <form action="register.php" method="post">
                     <table>
+                    <tr>
+                        <input type="text" id="paper" name="paper" value = "<?php echo $paper ?>" readonly hidden>
+                        </tr>
                     <input type="text" id="pap" name="pap" value = "news" readonly hidden>
-
                         <tr>
                             <td>
                                 <label for="type">Select News Type-</label><br>

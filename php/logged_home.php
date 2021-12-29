@@ -71,7 +71,8 @@ $res1 = mysqli_query($con, $query);
                     while ($arr = mysqli_fetch_array($res)) {
                     ?>
                 <tr>
-                    <td><a href="articles.php"><button><img src="<?php echo $arr['filepath']; ?>" alt="jskdf"></button></a></td>
+                    <td><a href="articles.php"><button><img src="<?php echo $arr["filepath"]; ?>" alt="<?php echo $arr["paper_name"]; ?>"></button></a></td>
+                    
                 </tr>
             <?php
                     }
@@ -103,6 +104,7 @@ $res1 = mysqli_query($con, $query);
                     <table cellspacing = "10px">
                         <tr>
                             <th align="center">Paper Image</th>
+                            <th align="center">Paper Name</th>
                             <th align="center">Price/cm sq</th>
                             <th colspan="2" align="center">Options</th>
                         </tr>
@@ -112,13 +114,19 @@ $res1 = mysqli_query($con, $query);
                             <tr>
                                 <td><img src="<?php echo $arr['filepath']; ?>" alt="jskdf"></td>
                                 <center>
+                                    <td><p><?php echo $arr['paper_name'] ?></p></td>
                                     <td>
-
-                                        <p><?php echo $arr['price'] ?></p>
-                                        
-                                    <td><a href="advertisement.php"><button class="pub">Publish Ad</button></a></td>
-                                    <td><a href="news.php"><button class="news">Post News</button></a></td>
-                                    </td>
+                                        <p><?php echo $arr['price'] ?></p></td>
+                                    <td><button class="pub">
+                                        <form action="advertisement.php" method="get">
+                                            <input type="text" name="paper" id="paper" value="<?php echo $arr['paper_name'] ?>" readonly hidden>
+                                            <input type="submit" value="Publish ad" class="pub"  style="padding-right: 8px;">
+                                        </form>
+                                    </button></td>
+                                    <td><button class="news"><form action="news.php" method="get">
+                                            <input type="text" name="paper" id="paper" value="<?php echo $arr['paper_name'] ?>" readonly hidden>
+                                            <input type="submit" value="Post News" class="news" style="padding-right: 8px;">
+                                        </form></button></td>
                                 </center>
                             </tr>
                         <?php

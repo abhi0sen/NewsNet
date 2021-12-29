@@ -97,6 +97,9 @@ $res = history($user_id);
                     <a href="history.html">My History</a><br>
                     <hr>
                     <hr>
+                    <a href="../php/delete.php">Delete Account</a>
+                    <hr>
+                    <hr>
                     <a href="../php/logout.php">Log Out</a>
                     <hr>
                     <hr>
