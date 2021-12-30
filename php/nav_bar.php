@@ -26,7 +26,7 @@ $name = $_SESSION['username'];
         </div>
         <div class="button">
             <a href="#nav_bar"><button class="btn">Home</button></a>
-            <a href="help.html"><button class="btn">Help</button></a>
+            <a href="help.php"><button class="btn">Help</button></a>
             <div class="user">
                 <img src="../images/user.png" alt="user" id="ui">
                 <button class="btn"><?php echo $name; ?></button>

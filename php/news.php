@@ -24,7 +24,7 @@ include ('nav_bar.php');
                 <form action="register.php" method="post">
                     <table>
                     <tr>
-                        <input type="text" id="paper" name="paper" value = "<?php echo $paper ?>" readonly hidden>
+                        <input type="text" id="paper" name="paper" value = "<?php echo $paper ?>" readonly>
                         </tr>
                     <input type="text" id="pap" name="pap" value = "news" readonly hidden>
                         <tr>

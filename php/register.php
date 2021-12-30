@@ -69,6 +69,7 @@ $res = move_uploaded_file($tempath, $uploadpath);
 else if($typ == 'news'){
     session_start();
     // $post_id = $_SESSION['post_id'];
+    $paper = $_POST['paper'];
     $type = $_POST['type'];
     $headline = $_POST['headline'];
     $city = $_POST['city'];
@@ -146,7 +147,7 @@ else if ($con && $typ == 'news')
 {
     // session_start();
     $user_id = $_SESSION['user_id'];
-    $post_query = "insert into post (user_id, type) value ($user_id, 'News')";
+    $post_query = "insert into post (user_id, type, paper_name) value ($user_id, 'News', '$paper')";
     mysqli_query($con, $post_query);
     // $rs = post();
     // $post_id = $rs['post_id'];
@@ -172,7 +173,7 @@ else if($con && $typ == '1.1'){
     $query = "update newspaper set price = $price, mail_id = '$mail', contact_no = '$cont' where paper_name = '$paper_name'";
     $res = mysqli_query($con, $query);
     echo $res;
-    // header('location:admin_home.php');
+    header('location:admin_home.php');
 }
 else if ($con && $typ =='forgot0')
 {

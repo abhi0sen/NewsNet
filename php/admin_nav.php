@@ -17,6 +17,10 @@ $name = $_SESSION['paper_name'];
     #rm a{
         color: black;
     }
+    /* .para{
+        margin-top: 20px;
+        margin-right: 20px;
+    } */
 </style>
 </head>
 <body>
@@ -27,7 +31,7 @@ $name = $_SESSION['paper_name'];
             <!-- <li><a href="request_admin.php"> Request </a></li> -->
             <li><div class="user">
                 <!-- <img src="../images/user.png" alt="user" id="ui"> -->
-                <a href="request_home.php">Request</a>
+                <a href="#">Request</a>
                 <div class="user_menu" id="rm" >
                     <!-- <a href="history.php">News</a><br> -->
                     <form action="request_admin.php"><input type="submit" name="type" value="News"></form>
@@ -41,7 +45,7 @@ $name = $_SESSION['paper_name'];
             <!-- <li><a href="#contact"> contact us </a></li> -->
         </ul>
         <div class="rightnav">
-            <button class="btn btn-sm"> <?php echo $name ?> </button>
+            <span> <?php echo $name ?> </span>
             <a href="logout.php"><button class="btn btn-sm"> Log Out</button></a>
         </div>  
     </nav>

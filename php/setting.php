@@ -2,6 +2,7 @@
 include('database.php');
 session_start();
 $name = $_SESSION['paper_name'];
+// echo $name;
 $res = updateAgencyRecord($name);
 $pap_name = $res['paper_name'];
 $price = $res['price'];

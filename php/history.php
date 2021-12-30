@@ -53,7 +53,7 @@ $res = history($user_id);
             /* margin: 0;
             padding: 0; */
             background-color: orange;
-            width: 99.4%;
+            width: 100%;
             height: 200px;
             text-align: center;
             align-items: center;
@@ -65,11 +65,12 @@ $res = history($user_id);
         }
         .his_tbl{
             background-color: rgb(200, 122, 0);
-            width: 99.4%;
-            height: 200px;
+            width: 100%;
+            /* height: 200px; */
             text-align: center;
             align-items: center;
             justify-content: center;
+            padding-bottom: 20px;
         }
         table{
             /* margin-top: 20px; */
@@ -127,6 +128,7 @@ $res = history($user_id);
                         <th>Post Category</th>
                         <th>Amount</th>
                         <th>Approval Status</th>
+                        <!-- <th>Pay Now</th> -->
                     </tr>
                     <tr>
                 <?php

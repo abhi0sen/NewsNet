@@ -8,10 +8,7 @@ function loginuser($array)
 
     $user = $array['username'];
     $pass = $array['password'];
-    // echo $user." : ".$pass;
-
     $query = "select * from user where username='$user' and password = '$pass'";
-
     $result = mysqli_query($con, $query);
     $res = mysqli_fetch_array($result);
     return $res;
@@ -20,13 +17,9 @@ function loginuser($array)
 function loginadmin($array)
 {
     global $con;
-
     $pap_name = $array['paper_name'];
     $pass = $array['pass'];
-    // echo $user." : ".$pass;
-
     $query = "select * from newspaper where paper_name='$pap_name' and password = '$pass'";
-
     $result1 = mysqli_query($con, $query);
     $res = mysqli_fetch_array($result1);
     return $res;
@@ -35,16 +28,14 @@ function loginadmin($array)
 function post()
 {
     global $con;
-
     $query = "select * from post where post_id=(select max(post_id) from post);";
-
     $result1 = mysqli_query($con, $query);
     $res = mysqli_fetch_array($result1);
     return $res;
 }
+
 function apply($user_id, $post_id)
 {
-
     global $con;
     $apply_query = "insert into apply_for values ($user_id, curDate(), $post_id)";
     mysqli_query($con, $apply_query);
@@ -92,13 +83,7 @@ function getArticle()
 function updateAgencyRecord($name)
 {
     global $con;
-
-    // $pap_name = $array['paper_name'];
-    // $pass = $array['pass'];
-    // echo $user." : ".$pass;
-
     $query = "select * from newspaper where paper_name='$name'";
-
     $result1 = mysqli_query($con, $query);
     $res = mysqli_fetch_array($result1);
     return $res;
@@ -108,7 +93,7 @@ function history($user_id)
 {
     global $con;
 
-    $query = "select a.post_id, a.apply_date, n.paper_name, p.type, n.price, p.approval_status from apply_for a, post p, newspaper n WHERE a.post_id = p.post_id AND p.paper_name = n.paper_name and a.user_id = $user_id";
+    $query = "select * from history WHERE user_id = $user_id";
     $result1 = mysqli_query($con, $query);
     // $res = mysqli_fetch_array($result1);
     return $result1;
@@ -126,7 +111,7 @@ function request($pap_name, $p_type)
 
 function acceptRequest($p_id, $status){
     global $con;
-    $accept = "update post set approval_status = '$status' where post_id = $p_id";
+    $accept = "update post set approval_status = concat('$status','ed') where post_id = $p_id";
     $res = mysqli_query($con, $accept);
     return $res;
 }

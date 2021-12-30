@@ -92,7 +92,6 @@ $res1 = mysqli_query($con, $query);
             </center> -->
         </div>
     </section>
-
     <section class="news_ad" id="news_a" hidden>
         <div id="note">
             <center>
