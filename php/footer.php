@@ -1,4 +1,7 @@
 
+
+    <link rel="stylesheet" href="../css_styles/home_page.css">
+
 <section class="footer">
         <center>
             <b>

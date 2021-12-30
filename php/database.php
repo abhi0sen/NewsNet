@@ -108,7 +108,7 @@ function history($user_id)
 {
     global $con;
 
-    $query = "select a.post_id, a.apply_date, n.paper_name, p.type, n.price from apply_for a, post p, newspaper n WHERE a.post_id = p.post_id AND p.paper_name = n.paper_name and a.user_id = $user_id";
+    $query = "select a.post_id, a.apply_date, n.paper_name, p.type, n.price, p.approval_status from apply_for a, post p, newspaper n WHERE a.post_id = p.post_id AND p.paper_name = n.paper_name and a.user_id = $user_id";
     $result1 = mysqli_query($con, $query);
     // $res = mysqli_fetch_array($result1);
     return $result1;
@@ -119,8 +119,14 @@ function request($pap_name, $p_type)
 {
     global $con;
 
-    $query = "call getdata('$pap_name', '$p_type')";
+    $query = "call getdata('$p_type', '$pap_name')";
     $result1 = mysqli_query($con, $query);
-    // $res = mysqli_fetch_array($result1);
     return $result1;
+}
+
+function acceptRequest($p_id, $status){
+    global $con;
+    $accept = "update post set approval_status = '$status' where post_id = $p_id";
+    $res = mysqli_query($con, $accept);
+    return $res;
 }

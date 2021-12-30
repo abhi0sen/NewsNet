@@ -81,6 +81,12 @@ else if($typ == '1.1'){
     $mail = $_POST['m_id'];
     $cont = $_POST['cont'];
 }
+else if($typ = 'forgot0')
+{
+    $phone = $_POST['phone'];
+    $pass = $_POST['password'];
+    echo $phone.$pass;
+}
 
 $con = mysqli_connect('localhost', 'root', '', 'newsnet') or die("Connection Failed");
 if ($con && $typ == '0') {
@@ -114,7 +120,7 @@ if ($con && $typ == 'article')
         }
         else
         {
-            echo "<h1> News Insert FailedM</h1>";
+            echo "<h1> News Insert Failed</h1>";
         }
 }
 else if ($con && $typ == 'adver')
@@ -167,5 +173,11 @@ else if($con && $typ == '1.1'){
     $res = mysqli_query($con, $query);
     echo $res;
     // header('location:admin_home.php');
+}
+else if ($con && $typ =='forgot0')
+{
+    $query = "update user set password = '$pass' where contact_no = '$phone'";
+    $res = mysqli_query($con, $query);
+    // echo $query.$res;
 }
 ?>

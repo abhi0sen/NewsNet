@@ -1,6 +1,5 @@
 <?php
 session_start();
-$name = $_SESSION['paper_name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,20 +15,9 @@ $name = $_SESSION['paper_name'];
 </head>
 
 <body>
-    <nav class="Nav_bar background">
-        <ul class="nav-list">
-            <div class="logo"><img src="../images/logo.png" alt="Logo"></div>
-            <li><a href="#home"> Home </a></li>
-            <li><a href="request_admin.php"> Request </a></li>
-            <li><a href="setting.php"> Profile </a></li>
-            <!-- <li><a href="#service"> Services </a></li> -->
-            <!-- <li><a href="#contact"> contact us </a></li> -->
-        </ul>
-        <div class="rightnav">
-            <button class="btn btn-sm"> <?php echo $name ?> </button>
-            <a href="logout.php"><button class="btn btn-sm"> Log Out</button></a>
-        </div>  
-    </nav>
+<?php
+include('admin_nav.php');
+?>
     <section class="background firstsection">
         <!-- <div class="box-main">
             <div class="fhalf">
@@ -106,20 +94,9 @@ $name = $_SESSION['paper_name'];
             <img src="../img/logo.jpg" alt="same as logo" class="imgfluid">
         </div>
     </section>
-    <section class="footer">
-            <center>
-                <b>
-                    <p style="font-size: 20px;">Follow us</h3>
-                </b><br>
-                <a href="www.facebook.com"><img src="../images/facebook.png" alt="facebook"></a>
-                <a href="www.instagram.com"><img src="../images/instagram.png" alt="instagram"></a>
-                <a href="www.twitter.com"><img src="../images/twitter.png" alt="twitter"></a>
-                <br>
-                <em>
-                    <p style="font-size: 10px;">COPYRIGHT © 2021 NEWS.NET - ALL RIGHTS RESERVED</p>
-                </em>
-            </center>
-        </section>
+<?php
+include('footer.php')
+?>
 </body>
 
 </html>

@@ -12,12 +12,17 @@ $name = $_SESSION['username'];
     <title>Document</title>
     <link rel="stylesheet" href="../css_styles/home_page.css">
     <link rel="stylesheet" href="../css_styles/logged_home.css">
-
+    <style>
+        #nav_bar{
+            padding: 15px 0;
+            /* height: 80px; */
+        }
+    </style>
 </head>
 <body>
 <section class="nav_bar" id="nav_bar">
         <div class="logo">
-            <img src="../images/logo.png" alt="news.net">
+            <a href="logged_home.php"><img src="../images/logo.png" alt="news.net"></a>
         </div>
         <div class="button">
             <a href="#nav_bar"><button class="btn">Home</button></a>

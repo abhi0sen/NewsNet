@@ -156,13 +156,13 @@
                 err2.innerHTML = "";
             }
             
-            if (cpas.length == 0 || cpas1.length == 0)
+            if (cpas.length == 0)
             {
                 err4.innerHTML = "Plz re-enter password";
                 err4.style.color = "red";
             }
 
-            if (phn.length == 0 || phn.length == 0)
+            if (phn.length == 0)
             {
                 err3.innerHTML = "Plz enter your mobile no";
                 err3.style.color = "red";
@@ -172,11 +172,7 @@
                 err3.innerHTML = "Plz enter only numeric digit";
                 err3.style.color = "red";
             }
-            else if (isNaN(phn1))
-            {
-                err3.innerHTML = "Plz enter only numeric digit";
-                err3.style.color = "red";
-            }
+
             else if (phn.length<10 || phn.length>10) {
                 err3.innerHTML = "Plz enter 10 digit mobile no";
                 err3.style.color = "red";
@@ -188,7 +184,7 @@
         }
 
         function checkpass() {
-            if (cpass.value != pass.value || cpass1.value != pass1.value)
+            if (cpass.value != pass.value)
             {
                 err4.innerHTML = "Password didn't match...";
                 err4.style.color = "red";
@@ -285,7 +281,7 @@
         </div>
         <section class="back" id="login" hidden>
             <center>
-                <p style="margin-top: 20px;">WELCOME</p><br>
+                <p style="margin-top: 20px;">Register our Online News Network for Uploading your Stuffs</p><br>
                 <p>REGISTER YOUR ACCOUNT</p>
                 <section class="sub_back">
                     <div>
@@ -298,7 +294,7 @@
                                     <td><label for="username">Username</label></td>
                                     <td> : </td>
                                     <td><input type="text" id="username" name="username" placeholder="Enter your username" onblur="validation()" onkeyup = "validation()" required></td>
-                                    <td colspan="3"><span id="err1" style="font-size: 10px;">*</span></td>
+                                    <td colspan="3"><span id="err1" style="font-size: 10px;"></span></td>
                                 </tr>
                                 <tr>
                                     <td><label for="contact">Contact No</label></td>
@@ -340,7 +336,7 @@
 
         <section class="back" id="ad" hidden>
             <center>
-                <p style="margin-top: 30px;">WELCOME</p><br>
+                <em style="margin-top: 30px;">We Guarantee you that we Preserve the Agent-Client Affinity</em><br><br>
                 <p>REGISTER YOUR PAPER AGENCY</p>
                 <section class="sub_back">
                     <div>

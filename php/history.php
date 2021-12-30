@@ -126,6 +126,7 @@ $res = history($user_id);
                         <th>Paper Name</th>
                         <th>Post Category</th>
                         <th>Amount</th>
+                        <th>Approval Status</th>
                     </tr>
                     <tr>
                 <?php
@@ -139,6 +140,7 @@ $res = history($user_id);
                     <td><?php echo $arr['paper_name'];?></td>
                     <td><?php echo $arr['type'];?></td>
                     <td><?php echo $arr['price'];?></td>
+                    <td><?php echo $arr['approval_status'];?></td>
                 </tr>
                 <?php
                     }

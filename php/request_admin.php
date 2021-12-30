@@ -2,7 +2,8 @@
 session_start();
 include('database.php');
 $pap_name = $_SESSION['paper_name'];
-
+$p_type = $_GET['type'];
+// echo $p_type;
 ?>
 
 <!DOCTYPE html>
@@ -14,30 +15,64 @@ $pap_name = $_SESSION['paper_name'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .section {
+        /* *{
+            padding: 0;
+            /* margin: 0; 
+        } */
+        .sections {
+            margin-left: 23%;
             width: 50%;
-            background-color: whitesmoke;
+            /* background: rgba(0, 200, 200, 0.1) url("../images/front_bg.png"); */
             text-align: center;
+            padding: 2%;
+            color: black;
+            border: 2px solid black;
         }
+        .backg{
+    background: rgba(0, 0, 0, 0.4) url('../images/request.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 30px;
+}
+table{
+    /* background-color: whitesmoke; */
+    padding: 30px;
+    color: black;
+}
+td, th{
+    background-color: lightgrey;
+    padding: 20px;
+}
+
+.request{
+    padding: 5px;
+    width: 60px;
+}
     </style>
 </head>
 
 <body>
-    <div style="display: flex;">
-        <div class="section"><button class="pub"><?php $p_type = 'advertisement' ?> Advertisement</button></div>
-
-        <div class="section"><button class="news"><?php $p_type = 'news' ?>News</button></div>
+<?php
+include('admin_nav.php');
+?>
+    <section class="backg">
+    <div>
+        <div>
+        <div style="background-color: lightgrey;" class="sections"><p><?php echo $p_type ?></p></div>
     </div>
+<br><br>
     <?php
-        $data = request('$pap_name', '$p_type');
+        $data = request($pap_name, $p_type);
     ?>
     <section>
-        <table>
+        <center>
+        <table cellspacing = "20" align="center" padding = "30px" border="2px solid black">
             <tr align="center">
-                <th>Ad Type </th>
-                <th>Description </th>
+                <th>paper_name</th>
                 <th>User Id</th>
-                <th>User Id</th>
+                <th>post_id </th>
+                <th>type</th>
+                <th>Requesst</th>
             </tr>
             <tr>
                 <?php
@@ -47,15 +82,28 @@ $pap_name = $_SESSION['paper_name'];
                 ?>
                 <tr>
                     <td><?php echo $arr['paper_name']?></td>
-                    <td><img src="<?php echo $arr['user_id']?>" alt="<?php echo $arr['file_desc']?>"></td>
+                    <td><?php echo $arr['user_id']?></td>
                     <td><?php echo $arr['post_id'];?></td>
                     <td><?php echo $arr['type'];?></td>
+                    <td>
+                        <form action="request.php"><input type="text" name="post_id" value= <?php echo $arr['post_id'] ?> readonly hidden>
+                        <input type="text" name="price" placeholder="enter final price"><input type="Submit" name="request" value="Accept" class="request"></form>
+                        <br><center>
+                        <form action="request.php">
+                        <input type="text" name="post_id" value= <?php echo $arr['post_id'] ?> readonly>
+                        <input type="Submit" name="request" value="Reject" class="request"></form></center>
+                </td>
                 </tr>
                 <?php
                     }
                     ?>
             </tr>
         </table>
+        </center>
+    </section>
     </section>
 </body>
 </html>
+<?php
+include('footer.php');
+?>

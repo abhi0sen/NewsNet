@@ -2,11 +2,6 @@
 include('database.php');
 session_start();
 $name = $_SESSION['paper_name'];
-// echo "name is : ".$name;
-// $con = mysqli_connect('localhost', 'root', '', 'newsnet') or die ("connection failed");
-// $article = "select * from newspaper where paper_name = $name";
-// $res = mysqli_query($con, $article);
-// $arr = mysqli_affected_rows($res);
 $res = updateAgencyRecord($name);
 $pap_name = $res['paper_name'];
 $price = $res['price'];
@@ -14,8 +9,11 @@ $phone = $res['contact_no'];
 $mail = $res['mail_id'];
 // $pap_name = $res[''];
 ?>
-
+<?php
+include('admin_nav.php');
+?>
 <center>
+    <p style="font-size: 40px; padding:20px">Update your Information </p>
 <form action="register.php" method="post">
             <table class="tab">
                 <tr hidden>
@@ -25,7 +23,7 @@ $mail = $res['mail_id'];
                     <td><label for="paper_name">Paper Name</label></td>
                     <td> : </td>
                     <td><input type="text" id="paper_name" name="paper_name" value="<?php echo $pap_name ?>" onblur="validation()" onkeyup = "validation()" readonly></td>
-                    <tr><td colspan="3"><span id="err1" style="font-size: 10px;"></span></td></tr>
+                    <tr><td colspan="3"><span id="err1" style="font-size: 10px; color:red;">Paper Name can not be Changed</span></td></tr>
                 </tr>
                 <tr>
                     <td><label for="price">Price</label></td>
@@ -48,3 +46,8 @@ $mail = $res['mail_id'];
         </div>
         </form>
 </center>
+<br><br>
+
+<?php
+include('footer.php')
+?>

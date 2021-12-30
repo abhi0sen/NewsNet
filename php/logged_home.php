@@ -63,7 +63,8 @@ $res1 = mysqli_query($con, $query);
                 <h1>Select Newspaper To Send Article</h1>
             </center>
         </div>
-        <div>
+        <div style="padding : 30px">
+            <center>
             <table>
                 <tr>
                     <?php
@@ -79,6 +80,7 @@ $res1 = mysqli_query($con, $query);
             ?>
             </tr>
             </table>
+            </center>
             <!-- <center>
                 <a href="articles.html"><button class="paper_button"><img src="../images/toi.png" alt="Times Of India"></button></a>
                 <a href="articles.html"><button class="paper_button"><img src="../images/fpj.png" alt="Free Press"></button></a>

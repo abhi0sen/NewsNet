@@ -66,7 +66,7 @@ include ('nav_bar.php');
                         <tr>
                             <td>
                                 <!-- <input type="text" id="desc" name="desc" placeholder="Name of Author"><br><br> -->
-                                <textarea name="n_desc" id="n_desc" cols="30" rows="10" required></textarea>
+                                <textarea name="n_desc" id="n_desc" cols="30" rows="5" required></textarea>
                             </td>
                         </tr>
                         <br><br>
