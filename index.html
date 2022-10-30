@@ -21,12 +21,13 @@
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="./js/jquery-3.6.0.min.js"></script>
 
   <!-- Jquery CSS -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 
-
+<!-- Scripts -->
+  <script src="./js/scripts.js"></script>
   <script>
     $(function () {
       var availableTags = [
@@ -56,9 +57,9 @@
 
 </head>
 
-<body class="container-fluid">
+<body>
 
-  <nav class="nav_bar p-2 bg-dark text-light  navbar navbar-expand-lg navbar-dark" id="nav">
+  <nav class="nav_bar p-2 text-light  navbar navbar-expand-lg navbar-dark" id="nav">
     <div class="ps-2 pt-1">
       <a href="#nav"><img src="images/logo.png" alt="news.net"></a>
     </div>
@@ -78,11 +79,11 @@
           <a class="nav-link active" href="#about">About</a>
         </li>
 
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown d-none">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Post-Type
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          <ul class="dropdown-menu " aria-labelledby="navbarScrollingDropdown">
             <li><a class="dropdown-item" class="art" href="#">Article</a></li>
             <li><a class="dropdown-item" class="ad" href="#">Advertisement</a></li>
             <li><a class="dropdown-item" class="news" href="#">News</a></li>
@@ -101,7 +102,7 @@
           </a></button>
       </form>
     </div>
-      <div class="button ms-auto" >
+
     <div class="">
       <a href="php/Sign_in.html"><button class="btn text-light">Log In</button></a>
       <a href="php/registration.html"><button class="btn text-light">Register</button></a>
@@ -173,7 +174,7 @@
           <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/hindu.png"
                 alt="Times Of India"></button><br></a>
         </div>
-        <div class="d-sm-none d-md-block">
+        <div class="d-none d-lg-block">
           <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/db.png"
                 alt="Times Of India"></button></a>
           <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/patrika.png"
@@ -192,7 +193,7 @@
       </center>
     </div>
     <section class="d-flex">
-      <div class=" ms-5">
+      <div class=" mx-5">
         <div class="mt-4 ms-5">
           <p class="fs-2 my-4"><b>What are you thinking about us?</b></p>
           <!-- <br> -->
@@ -209,14 +210,14 @@
             </button></a>
         </div>
       </div>
-      </div>
-      <div class="m-3 ms-auto ms-5 d-sm-none d-md-block">
-        <img class="w-75 " src="images/con_img.png" alt="">
+  
+      <div class="mx-auto my-auto d-none d-md-block">
+        <img class="w-75 mt-auto" src="images/con_img.png" alt="">
       </div>
     </section>
   </section>
 
-  <footer class="bg-secondary text-center text-white">
+  <footer class="bg-dark text-center text-white">
     <div class="p-4">
       <section class="mb-4">
         <h6>Follow Us On</h6>

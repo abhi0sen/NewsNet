@@ -17,12 +17,7 @@
         crossorigin="anonymous"></script> -->
 
     <style>
-        * {
-            margin: 0;
-            margin-left: 5px;
-            margin-right: 5px;
-            padding: 0;
-        }
+
 
         .logo {
             /* position: static;
@@ -43,40 +38,23 @@
         }
 
         .background {
-            background: rgba(0, 0, 0, .7) url('../images/sign_back.jpg');
+            background: rgba(0, 0, 0, .9) url('../images/sign_back.jpg');
             /* background-size: cover; */
-            height: 120vh;
-            max-width: 1490px;
+
             background-blend-mode: darken;
         }
 
-        .fhalf {
-            text-align: center;
-            margin-top: 50px;
-            /* width: 33.33%; */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
 
-        .shalf {
-            margin-top: 30px;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .btn {
+        /*.btn {
             padding: 8px 20px;
             margin: 7px 5px;
             border: 2px solid white;
             border-radius: 50px;
-            /* font-size: 20px; */
+            /* font-size: 20px; 
             background: none;
             color: whitesmoke;
             cursor: pointer;
-        }
+        }*/
 
         .text-big {
             font-size: 41px;
@@ -255,85 +233,87 @@
 </head>
 
 <body onload="init()">
-    <section class="background">
+    <section class="background pb-5">
         <div class="logo">
             <img src="../images/logo.png" alt="news.net">
         </div>
 
-        <div class="fhalf">
-            <p class="text-big">Register Yourself as ... </p>
-            <div class="buttons">
-                <button class="btn-outline-dark btn" id="user">User</button>
-                <button class="btn" id="paper">Paper Agency</button>
+        <div class="text-center my-5">
+            <p class="fs-2 text-light">Register Yourself as ... </p>
+            <div class="m-4">
+                <button class="btn btn-outline-light me-3" id="user">User</button>
+                <button class="btn btn-outline-light" id="paper">Paper Agency</button>
             </div>
         </div>
-        <section class="bg-dark" id="login" hidden>
-            <center>
+        <center>
+        <section class="w-50 bg-light p-3" id="login">
                 <p><em> Register our Online News Network for Uploading your Stuffs</em></p><br>
-                <p>REGISTER YOUR ACCOUNT</p>
-                <section class="sub_back">
+                <p>Register your account</p>
+                <section class="bg-dark text-light p-3">
                     <div>
-                        <form class="py-3" action="register.php" method="post">
-                            <table class="">
+                        <form action="register.php" method="post">
+                            <table class="w-100">
                                 <tr hidden>
                                     <td><input type="text" id="pap" name="pap" value="0" readonly></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="username">Username</label></td>
-                                    <td> : </td>
-                                    <td><input type="text" id="username" name="username"
+                                    <td><label class = "py-3"  for="username">Username:</label></td>
+                                    <!-- <td> : </td> -->
+                                    <td><input  class="ms-4 w-75 form-control" type="text" id="username" name="username"
                                             placeholder="Enter your username" onblur="validation()"
                                             onkeyup="validation()" required></td>
-                                    <td colspan="3"><span id="err1" style="font-size: 10px;"></span></td>
+                                    <td colspan="3"><span class = "ms-2" id="err1" style="font-size: 10px;"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="contact">Contact No</label></td>
-                                    <td> : </td>
-                                    <td><input type="text" id="contact" name="contact" placeholder="Enter your phone no"
+                                    <td><label class = "py-3"  for="contact">Contact No:</label></td>
+                                    <!-- <td> : </td> -->
+                                    <td><input  class="ms-4 w-75 form-control" type="text" id="contact" name="contact" placeholder="Enter your phone no"
                                             onkeyup="validation()" required></td>
-                                    <td colspan="3"><span id="err3" style="font-size: 10px;"></span></td>
+                                    <td colspan="3"><span  class = "ms-2" id="err3 " style="font-size: 10px;"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="mail">Mail Id</label></td>
-                                    <td> : </td>
-                                    <td><input type="text" id="mail" name="mail" placeholder="Enter your mail id"
+                                    <td><label class = "py-3"  for="mail">Mail Id:</label></td>
+                                    <!-- <td> : </td> -->
+                                    <td><input class="ms-4 w-75 form-control" type="text" id="mail" name="mail" placeholder="Enter your mail id"
                                             required></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="address">Address</label></td>
-                                    <td> : </td>
-                                    <td><input type="text" id="address" name="address" placeholder="Enter your address"
+                                    <td><label class = "py-3"  for="address">Address:</label></td>
+                                    <!-- <td> : </td> -->
+                                    <td><input  class="ms-4 w-75 form-control" type="text" id="address" name="address" placeholder="Enter your address"
                                             required></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="password">Password</label></td>
-                                    <td> : </td>
-                                    <td><input type="password" id="password" name="password"
+                                    <td><label class = "py-3"  for="password">Password: </label></td>
+                                    <!-- <td> : </td> -->
+                                    <td><input class="ms-4 w-75 form-control"  type="password" id="password" name="password"
                                             placeholder="Enter your Password" onblur="validation()"
                                             onkeyup="validation()" required></td>
-                                    <td colspan="3"><span id="err2" style="font-size: 10px;"></span></td>
+                                    <td colspan="3"><span  class = "ms-2" id="err2" style="font-size: 10px;"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="cpassword">Confirm Password</label></td>
-                                    <td> : </td>
-                                    <td><input type="password" id="cpassword" name="cpassword"
+                                    <td><label class = "py-3"  for="cpassword">Confirm Password:</label></td>
+                                    <!-- <td> : </td> -->
+                                    <td><input class="ms-4 w-75 form-control"  type="password" id="cpassword" name="cpassword"
                                             placeholder="Enter your Password" onkeyup="checkpass()" required></td>
-                                    <td colspan="3"><span id="err4" style="font-size: 10px;"></span></td>
+                                    <td colspan="3">
+                                        <span class = "ms-2" id="err4" style="font-size: 10px;"></span></td>
                                 </tr>
-
                             </table>
-                            <input type="Submit" value="Create Account" id="submit" onclick="validation()">
+                            <input type="Submit" class="btn btn-primary mt-3" value="Create Account" id="submit" onclick="validation()">
                     </div>
                     </form>
+                    <hr>
+                            <p>Already have an account?<a class="text-info small" href="Sign_in.html"> Login Now!</a></p>
                     </div>
                 </section>
-            </center>
-        </section>
+            </section>
+        </center>
 
+        <center>
         <section class="back" id="ad" hidden>
-            <center>
                 <em style="margin-top: 30px;">We Guarantee you that we Preserve the Agent-Client Affinity</em><br><br>
-                <p>REGISTER YOUR PAPER AGENCY</p>
+                <p>Register your paper agency</p>
                 <section class="sub_back">
                     <div>
                         <form action="register.php" method="post" enctype="multipart/form-data">
@@ -394,8 +374,8 @@
                     </form>
                     </div>
                 </section>
-            </center>
-        </section>
+            </section>
+        </center>
 
         <!-- </div> -->
     </section>
