@@ -1,6 +1,6 @@
 <?php
 // echo "aagya";
-include ('database.php');
+include('database.php');
 session_start();
 $name = $_SESSION['username'];
 $user_id = $_SESSION['user_id'];
@@ -12,6 +12,7 @@ $res = history($user_id);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +30,7 @@ $res = history($user_id);
             height: 20px;
             margin-right: 0;
         }
+
         .user_menu {
             display: none;
             position: absolute;
@@ -49,22 +51,26 @@ $res = history($user_id);
             color: black;
             margin-top: 10px;
         }
-        .his_note{
+
+        .his_note {
             /* margin: 0;
             padding: 0; */
-            background-color: orange;
+            background-color: #0F149F;
+            color: white;
             width: 100%;
             height: 200px;
             text-align: center;
             align-items: center;
             justify-content: center;
         }
-        .his_note p{
+
+        .his_note p {
             margin-top: 10px;
             padding: 5px;
         }
-        .his_tbl{
-            background-color: rgb(200, 122, 0);
+
+        .his_tbl {
+            background-color: #9EC7EC;
             width: 100%;
             /* height: 200px; */
             text-align: center;
@@ -72,24 +78,28 @@ $res = history($user_id);
             justify-content: center;
             padding-bottom: 20px;
         }
-        table{
+
+        table {
             /* margin-top: 20px; */
             border: 2px solid black;
         }
-        table, th, td{
+
+        table,
+        th,
+        td {
             border: 1px Solid black;
-            text-align:center;
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
-<section class="nav_bar">
+    <section class="nav_bar">
         <div class="logo">
             <img src="../images/logo.png" alt="news.net">
         </div>
         <div class="button">
             <a href="logged_home.php"><button class="btn">Home</button></a>
-            <a href="logged_home.php.#contact"><button class="btn">Contact Us</button></a>
             <a href="help.html"><button class="btn">Help</button></a>
             <img src="../images/user.png" alt="user" id="ui">
             <div class="user">
@@ -109,16 +119,18 @@ $res = history($user_id);
         </div>
     </section>
 
-        <section class="his_note">
-            <div >
-                <b><p style="font-size: 30px;">Your Order History</p></b>
-                <p style="font-size: 15px;">Find Your Order History Below in the Page</p>
-            </div>
-        </section>
-        
-        <section class="his_tbl">
-            <center>
-                <br><br>
+    <section class="his_note">
+        <div>
+            <b>
+                <p style="font-size: 30px;">Your Order History</p>
+            </b>
+            <p style="font-size: 15px;">Find Your Order History Below in the Page</p>
+        </div>
+    </section>
+
+    <section class="his_tbl">
+        <center>
+            <br><br>
             <div>
                 <table align="center">
                     <tr>
@@ -131,41 +143,41 @@ $res = history($user_id);
                         <!-- <th>Pay Now</th> -->
                     </tr>
                     <tr>
-                <?php
+                        <?php
 
-                    while($arr = mysqli_fetch_array($res))
-                    {
-                ?>
-                <tr>
-                    <td><?php echo $arr['post_id']?></td>
-                    <td><?php echo $arr['apply_date']?></td>
-                    <td><?php echo $arr['paper_name'];?></td>
-                    <td><?php echo $arr['type'];?></td>
-                    <td><?php echo $arr['price'];?></td>
-                    <td><?php echo $arr['approval_status'];?></td>
-                </tr>
+                        while ($arr = mysqli_fetch_array($res)) {
+                        ?>
+                    <tr>
+                        <td><?php echo $arr['post_id'] ?></td>
+                        <td><?php echo $arr['apply_date'] ?></td>
+                        <td><?php echo $arr['paper_name']; ?></td>
+                        <td><?php echo $arr['type']; ?></td>
+                        <td><?php echo $arr['price']; ?></td>
+                        <td><?php echo $arr['approval_status']; ?></td>
+                    </tr>
                 <?php
-                    }
-                    ?>
-            </tr>
-                </table>    
+                        }
+                ?>
+                </tr>
+                </table>
             </div>
-            </center>
-        </section>
-        <section class="footer">
-            <center>
-                <b>
-                    <p style="font-size: 20px;">Follow us</h3>
-                </b><br>
-                <a href="www.facebook.com"><img src="../images/facebook.png" alt="facebook"></a>
-                <a href="www.instagram.com"><img src="../images/instagram.png" alt="instagram"></a>
-                <a href="www.twitter.com"><img src="../images/twitter.png" alt="twitter"></a>
-                <br>
-                <em>
-                    <p style="font-size: 10px;">COPYRIGHT © 2021 NEWS.NET - ALL RIGHTS RESERVED</p>
-                </em>
-            </center>
-        </section>
+        </center>
+    </section>
+    <section class="footer">
+        <center>
+            <b>
+                <p style="font-size: 20px;">Follow us</h3>
+            </b><br>
+            <a href="www.facebook.com"><img src="../images/facebook.png" alt="facebook"></a>
+            <a href="www.instagram.com"><img src="../images/instagram.png" alt="instagram"></a>
+            <a href="www.twitter.com"><img src="../images/twitter.png" alt="twitter"></a>
+            <br>
+            <em>
+                <p style="font-size: 10px;">COPYRIGHT © 2021 NEWS.NET - ALL RIGHTS RESERVED</p>
+            </em>
+        </center>
+    </section>
 
 </body>
+
 </html>

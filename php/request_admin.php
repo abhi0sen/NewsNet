@@ -48,6 +48,21 @@ $p_type = $_GET['type'];
             width: 60px;
         }
     </style>
+
+<!-- <script>
+        $(document).ready(function() {
+            $("#accept").click(function() {
+                $("#frm").hide();
+                // $("#article").slideToggle();
+            });
+        });
+        $(document).ready(function() {
+            $("#reject").click(function() {
+                $("#frm").hide();
+                // $("#news_a").slideToggle();
+            });
+        }); -->
+    <!-- </script> -->
 </head>
 
 <body>
@@ -77,7 +92,6 @@ $p_type = $_GET['type'];
                         </tr>
                         <tr>
                             <?php
-
                             while ($arr = mysqli_fetch_array($data)) {
                             ?>
                         <tr>
@@ -86,14 +100,14 @@ $p_type = $_GET['type'];
                             <td><?php echo $arr['post_id']; ?></td>
                             <td><?php echo $arr['type']; ?></td>
                             <td>
-                                <form action="request.php"><input type="text" name="post_id" value=<?php echo $arr['post_id'] ?> readonly hidden>
-                                    <input type="text" name="price" placeholder="enter final price"><input type="Submit" name="request" value="Accept" class="request">
+                                <form action="request.php" id="frm"><input type="text" name="post_id" value=<?php echo $arr['post_id'] ?> readonly hidden>
+                                    <input type="text" name="price" placeholder="enter final price"><input type="Submit" id="accept" name="request" value="Accept" class="request">
                                 </form>
                                 <br>
                                 <center>
-                                    <form action="request.php">
+                                    <form action="request.php" id="frm">
                                         <input type="text" name="post_id" value=<?php echo $arr['post_id'] ?> readonly hidden>
-                                        <input type="Submit" name="request" value="Reject" class="request">
+                                        <input type="Submit" id="reject" name="request" value="Reject" class="request">
                                     </form>
                                 </center>
                             </td>

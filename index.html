@@ -2,98 +2,244 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newspaper Network</title>
-    <link rel="stylesheet" href="css_styles/home_page.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newspaper Network</title>
+  <link rel="stylesheet" href="css_styles/home_page.css">
+
+  <!-- Bootstrap Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Jquery Links -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+
+  <!-- Jquery CSS -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+<!-- Scripts -->
+  <script src="./js/scripts.js"></script>
+  <script>
+    $(function () {
+      var availableTags = [
+        "Times of India", "Nai Duniya", "Dainik Bhaskar", "The Hindu", "Patrika", "Hitavada", "Free Press", "Agnibaan", "Sunday Times", "Rojgaar Samachaar", "Punjab Kesari"];
+
+      $("#paperlist").autocomplete({
+        source: availableTags
+      });
+    });
+
+
+    $(document).ready(function () {
+      $("#article").hide();
+      $("#adnews").hide();
+      $(".art").click(function () {
+        $("#adnews").hide();
+        $("#article").show();
+      });
+      $(".ad").click(function () {
+        $("#article").hide();
+        $("#adnews").slideToggle();
+      });
+    });
+  </script>
+
+
+
 </head>
 
 <body>
-    <section class="nav_bar" id="nav">
-        <div class="logo">
-            <a href="#nav"><img src="images/logo.png" alt="news.net"></a>
-        </div>
-        <div class="button">
-            <a href="php/Sign_in.html"><button class="btn">Log In</button></a>
-            <a href="php/registration.html"><button class="btn">Register</button></a>
-        </div>
-    </section>
-    <div class="bg_image">
-        <img src="images/front_bg.png" alt="Newspaper_header">
+
+  <nav class="nav_bar p-2 text-light  navbar navbar-expand-lg navbar-dark" id="nav">
+    <div class="ps-2 pt-1">
+      <a href="#nav"><img src="images/logo.png" alt="news.net"></a>
     </div>
-    <section class = "news_sec">
-        <div class = "note">
-            <center>
-                <h1>Send Your Stuffs in Major Newspaper</h1>
-            </center>
+    
+    <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto mx-3 my-2 my-lg-0 p-sticky" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#about">About</a>
+        </li>
+
+        <li class="nav-item dropdown d-none">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Post-Type
+          </a>
+          <ul class="dropdown-menu " aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" class="art" href="#">Article</a></li>
+            <li><a class="dropdown-item" class="ad" href="#">Advertisement</a></li>
+            <li><a class="dropdown-item" class="news" href="#">News</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#Contact">Contact Us</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control my-2 me-2" type="search" id="paperlist" placeholder="Search Newspaper"
+          aria-label="Search">
+        <button class="btn" type="submit"><a class="btn  btn-outline-light" href="#!" role="submit">
+            <ion-icon name="search-outline"></ion-icon>
+          </a></button>
+      </form>
+    </div>
+
+    <div class="">
+      <a href="php/Sign_in.html"><button class="btn text-light">Log In</button></a>
+      <a href="php/registration.html"><button class="btn text-light">Register</button></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <section>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./images/slide1.jpg" class="d-block w-100" alt="NewsNet">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
         </div>
+        <div class="carousel-item">
+          <img src="./images/slide2.jpg" class="d-block w-100" alt="Description">
+
+        </div>
+        <div class="carousel-item">
+          <img src="./images/slide3.png" class="d-block w-100" alt="Description">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+  <section class="text-dark bg-light p-5">
+    <div>
+      <center>
+        <h1 class="fs-1">About Newspaper Network</h1>
+      </center>
+    </div>
+    <div class="fs-6">
+      <center>
+        <p>Based on our research and experience in the advertising and news world, we understand your needs and suggest
+          the appropriate newspaper to post your content in. As newspaper Article, News, & Advertisement cost are often
+          dependent on circulation, you can check the cost of all this for any newspaper on our reliable product
+          Newspaper Network or “News.Net”.</p>
+      </center>
+    </div>
+  </section>
+  <section class="bg-dark text-light p-5">
+    <div class="fs-2">
+      <center>
+        <h1 class="mb-4">Send Your Stuffs in Major Newspaper</h1>
+      </center>
+    </div>
+    <div class="d-space-evenly">
+      <center>
         <div>
-            <center>
-            <a href="php/Sign_in.html"><button class = "paper_button"><img src="images/toi.png" alt="Times Of India"></button></a>
-            <a href="php/Sign_in.html"><button class = "paper_button"><img src="images/fpj.png" alt="Free Press"></button></a>
-            <a href="php/Sign_in.html"><button class = "paper_button"><img src="images/hindu.png" alt="Times Of India"></button><br></a>
-            
-            <a href="php/Sign_in.html"><button class = "paper_button"><img src="images/db.png" alt="Times Of India"></button></a>
-            <a href="php/Sign_in.html"><button class = "paper_button"><img src="images/patrika.png" alt="Free Press"></button></a>
-            <a href="php/Sign_in.html"><button class = "paper_button"><img src="images/ND.png" alt="Times Of India"></button><br></a>
-            </center>
+          <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/toi.png"
+                alt="Times Of India"></button></a>
+          <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/fpj.png"
+                alt="Free Press"></button></a>
+          <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/hindu.png"
+                alt="Times Of India"></button><br></a>
         </div>
-    </section>
-    <section class = "news_sec about">
-        <div class = "note">
-            <center>
-                <h1>About Newspaper Network</h1>
-            </center>
-        </div>
-        <div class = "description">
-            <center>
-                <p>Based on our research and experience in the advertising and news world, we understand your needs and suggest the appropriate newspaper to post your content in. As newspaper Article, News, & Advertisement cost are often dependent on circulation, you can check the cost of all this for any newspaper on our reliable product Newspaper Network or “News.Net”.</p>
-            </center>
-        </div>
-    </section>
+        <div class="d-none d-lg-block">
+          <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/db.png"
+                alt="Times Of India"></button></a>
+          <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/patrika.png"
+                alt="Free Press"></button></a>
+          <a href="php/Sign_in.html"><button class="img-fluid m-3"><img src="images/ND.png"
+                alt="Times Of India"></button><br></a>
+      </center>
+    </div>
+    </div>
+  </section>
 
-    <section class = "news_sec contact">
-        <div style="font-size: 30px;">
-            <div">
-            <center>
-                <h1>Contact Us</h1>
-            </center>
-        </div>
-        <section class="c_us">
-            <div class="c_us1">
-            <div>
-                <p id="c_us_h"><b>What are you thinking about?</b></p>
-                <br>
-                <p id = "c_us_d">
-                    Have a story idea for us? <br>
-                    Would you like to write for us? 
-                    <br>
-                    Send us a message and let us know what you are thinking about.
-                </p>
-            </div>
-            <div>
-                <a href="https://web.whatsapp.com/"><button id="whatsapp">
-                    <img src="images/whatsapp.png" alt="">Message us on Whatsapp 
-                </button></a>
-            </div>
-            </div>
-        </div>
-        <div class = "c_us2">
-            <img src="images/con_img.png" alt="">
-        </div>
-    </section>
-    </section>
-    <section class = "footer">
-        <center>
-            <b><p style="font-size: 20px;">Follow us</h3></b><br>
-            <a href="facebook.com"><img src="images/facebook.png" alt="facebook"></a>
-            <a href="instagram.com"><img src="images/instagram.png" alt="instagram"></a>
-            <a href="twitter.com"><img src="images/twitter.png" alt="twitter"></a>
+  <section class="contact p-5 bg-light">
+    <div>
+      <center>
+        <h1 class="fs-1">Contact Us</h1>
+      </center>
+    </div>
+    <section class="d-flex">
+      <div class=" mx-5">
+        <div class="mt-4 ms-5">
+          <p class="fs-2 my-4"><b>What are you thinking about us?</b></p>
+          <!-- <br> -->
+          <p class="ps-2">
+            Have a story idea for us? <br>
+            Would you like to write for us?
             <br>
-            <em><p style="font-size: 10px;">COPYRIGHT © 2021 NEWS.NET - ALL RIGHTS RESERVED</p></em><br><br>
-        </center>
+            Send us a message and let us know what you are thinking about!
+          </p>
+        </div>
+        <div class="ms-5">
+          <a class="p-2" href="https://web.whatsapp.com/"><button class="p-1 pe-2 btn btn-outline-success" id="whatsapp">
+              <img class="mx-1 " src="images/whatsapp.png" alt="">Ping us Now!!
+            </button></a>
+        </div>
+      </div>
+  
+      <div class="mx-auto my-auto d-none d-md-block">
+        <img class="w-75 mt-auto" src="images/con_img.png" alt="">
+      </div>
     </section>
-</body>
+  </section>
 
+  <footer class="bg-dark text-center text-white">
+    <div class="p-4">
+      <section class="mb-4">
+        <h6>Follow Us On</h6>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </section>
+    </div>
+    <p class="text-center w-100 py-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright: @Newsnet
+    </p>
+  </footer>
+</body>
 </html>
